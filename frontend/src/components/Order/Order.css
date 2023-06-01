@@ -1,0 +1,159 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+    font-weight:400;
+    
+    
+
+}
+*::-webkit-scrollbar {
+    overflow: hidden;
+}
+
+.head
+{
+    display: flex;
+    height: 100vh;
+}
+.sec{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: -39px;
+}
+
+
+.sec1{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    color:#3e87c3;
+    font-size: 40px;
+}
+
+.sec2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: 7;
+}
+.sec3{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.sec2-1
+{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 4px solid #3e87c3;
+}
+.sec2-2
+{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-right: 4px solid #3e87c3;
+}
+.sec2-3
+{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*remove*/
+.s1{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+.s2{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+.s3{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+.s4{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+.s5{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+.s6{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+.s7{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+
+.s-1{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #3e87c3;
+}
+.s-2{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+.s-3{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+.btn-checkout{
+    height: 3.2vw;
+    margin-right: 45px;
+    background-color: #3e87c3;
+    color: white;
+    width: auto;
+    height: 40px;
+}
+.btn-checkout:hover{
+    background-color: #3e87c3;
+    color: white;
+}
+
+

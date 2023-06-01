@@ -1,0 +1,131 @@
+.main-footer {
+    font-family: 'Open Sans', sans-serif;
+    font-weight:400;
+    background-color: black;
+    border: 2px solid black;
+    /* width: 100vw; */
+  }
+  
+  .footer-cont {
+    margin: 1rem 3rem; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .foot-details {
+    color: white;
+    margin: 2rem;
+  }
+  .footer-sec-1 {
+    flex-grow: 4;
+  }
+  
+  .foot-title {
+    display: flex;
+    margin: 2rem;
+    color: #3e87c3;
+  }
+  
+  .foot-title h1 {
+    margin: 20px;
+  }
+  
+  .foot-title img {
+    height: 75px;
+  }
+  
+  .footer-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .footer-sec-2 {
+    flex-basis: 25%;
+    color: #3e87c3;
+    position: relative;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .footer-small-text a {
+    color: #3e87c3;
+    font-size: 20px;
+    margin: 2rem;
+  }
+  
+  .footer-small-text a:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+  .footer-small-text {
+    margin:1rem;
+  }
+  .footer-small-text:first-child {
+    margin-top: 4rem;
+  }
+  
+  /* .footer-small-text:last-child { */
+    /* margin-bottom: 4rem; */
+  /* } */
+  
+  .footer-small-text:not(:last-child) {
+    margin-right: 2rem;
+  }
+  .footer-small-text:not(:first-child) {
+    margin-left: 2rem;
+  }
+  
+  .footer-small-text:first-child,
+  .footer-small-text:last-child {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .footer-small-text:first-child:last-child {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  @media screen and (min-width: 420px) and (max-width: 1257px) {
+    .footer-sec-2 {
+      flex-basis: 100%;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    .footer-sec-2 {
+        flex-basis: 100%;
+        margin: 0px;
+      }
+    .footer-small-text:not(:first-child) {
+        margin-left: 0rem;
+    }
+    
+    .footer-small-text:not(:last-child) {
+        margin-right: 0rem;
+    }
+  }
+  
+  @media screen and (min-width: 1258px) and (max-width: 1510px) {
+    .footer-sec-2 {
+      flex-basis: 48%;
+      /* margin-bottom: 2rem; */
+    }
+  
+    .footer-sec-2:nth-of-type(3n) {
+      margin-right: 0;
+    }
+  }
+  
+  @media screen and (min-width: 1511px) {
+    .footer-sec-2 {
+      flex-basis: calc(25% - 1.5rem);
+      margin-right: 2rem;
+      /* margin-bottom: 2rem; */
+    }
+  
+    .footer-sec-2:nth-of-type(3n) {
+      margin-right: 0;
+    }
+  }
+  

@@ -1,0 +1,18 @@
+.boxx{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+.box1{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.btnn{
+    border-radius: 3rem;
+    background-color: #3e87c3;
+}
