@@ -117,10 +117,6 @@ router.post('/getuser', fetchuser ,async (req,res)=>{
     }
 })
 
-router.get('/checkout', (req,res) => {
-    console.log("hello");
-    console.log(req.body);
-})
 
 // Route to fetch item prices
 router.get('/items', async (req, res) => {
