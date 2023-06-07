@@ -34,7 +34,18 @@ function App() {
           <Route exact path="/services" element={[ <ScrollToTop/>,<Navbar/>,<Services/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
           <Route exact path="/whychooseus" element={[ <ScrollToTop/>,<Navbar/>,<WhyChooseUs/>,<ReviewsAndRatings/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
           <Route exact path="/reviews" element={[ <ScrollToTop/>,<Navbar/>,<ReviewsAndRatings/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
-          <Route exact path="/checkout" element={[ <ScrollToTop/>,<Navbar/>,<Checkout/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
+
+          {/* <Route exact path="/checkout" element={[ <ScrollToTop/>,<Navbar/>,<Checkout/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route> */}
+          <Route exact path="/checkout" element={
+             <>
+             <ScrollToTop />
+             <Navbar />
+             <Checkout grandTotal = {0}/>
+             <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
+           </>
+
+            }></Route>
+
           <Route exact path="/dashboard" element={[ <ScrollToTop/>,<Navbar/>,<Dashboard/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
           <Route exact path="/order" element={[ <ScrollToTop/>,<Navbar/>,<Order/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
           <Route exact path="/contactus" element={[ <ScrollToTop/>,<Navbar/>,<Contact/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
