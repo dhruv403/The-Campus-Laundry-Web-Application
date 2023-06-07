@@ -42,7 +42,8 @@ export default function Order(props) {
     navigate("/checkout", {
         state: {
             grandTotal,
-            totalQuantity
+            totalQuantity,
+            itemQuantities
         },
     });
 

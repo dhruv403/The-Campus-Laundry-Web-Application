@@ -5,7 +5,11 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 import paytmSound from './order_placed2.mp3';
 import { useNavigate, Link } from 'react-router-dom'
+import axios from 'axios';
+
 export default function Bag(props) {
+  // console.log(props);
+
   const { subTotal } = props;
 
     const [showPopup, setShowPopup] = useState(false);
@@ -28,6 +32,61 @@ export default function Bag(props) {
       setShowPopup(false);
       setRedirect(true);
     };
+
+    const handleSubmit = async (e) => {
+      if (!props.name || !props.email || !props.contactNo || !props.hostel || !props.roomNo || !props.paymentMethod) {
+        // Display an error message or handle validation errors
+        alert("Please enter all the details for further transaction to proceed")
+        return;
+      }
+      const orderSummary = {
+        name: props.name,
+        email: props.email,
+        contactNo: props.contactNo,
+        hostel: props.hostel,
+        roomNo: props.roomNo,
+        paymentMethod: props.paymentMethod,
+        hashMap: props.orderData
+      }
+      
+      for (let key in orderSummary.hashMap) {
+        // Check if the value is 0
+        if (orderSummary.hashMap[key] === 0) {
+          // Delete the key-value pair
+          delete orderSummary.hashMap[key];
+        }
+      }
+
+      try {
+        const response = await axios.post('http://localhost:5000/api/order/orders', orderSummary);
+        // console.log(response.data);
+        show();
+      } catch (error) {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          if (error.response.status === 400) {
+            alert('Please enter valid details.');
+          } else if (error.response.status === 500) {
+            alert('Server has some issues. Please try again later.');
+          }
+          else {
+            alert('Something wierd happened. Check if you have entered valid details otherwise server has some issues today!!!');
+          }
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.log(error.request);
+          alert('No response received from the server. Please try again later.');
+        } else {
+          // Something happened in setting up the request that triggered an error
+          console.log('Error', error.message);
+          alert('An error occurred. Please try again later.');
+        }
+      }
+
+      // console.log(orderSummary);
+
+
+    }
 
     return (
     <>
@@ -64,7 +123,7 @@ export default function Bag(props) {
             </div>
 
             <div className='bag-btn-div'>
-                <button className='bag-order-btn' onClick={show}>Order</button>
+                <button className='bag-order-btn' onClick={handleSubmit}>Order</button>
             </div>
         </div>
         {showPopup && ( 
