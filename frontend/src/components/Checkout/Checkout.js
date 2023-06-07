@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useLocation } from 'react-router-dom'
 import './Checkout.css'
 import cash from '../../images/cash.png'
 import user from '../../images/user.png'
@@ -7,14 +7,17 @@ import pin from '../../images/pin.png'
 import Bag from '../Bag/Bag'
 
 
-export default function Checkout() {
+export default function Checkout(props) {
+const location = useLocation();
+console.log(location.state.grandTotal);
+
   return (
     <>
         <div className="checkout-cont">
             <div className="cout-sec-1">
                 <div className="contact-head">
                     <img src={user} alt="" />
-                    <h2>Contact</h2>
+                    <h2>Contact </h2>
                 </div>
                 <form>
                     <div className="temp">
@@ -56,7 +59,7 @@ export default function Checkout() {
                         <div className="radio-content">
                             <div className="radio-btn">
                                 {/* <input type="radio"  name="radio"/>  */}
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
 
 
                             </div>
@@ -67,7 +70,7 @@ export default function Checkout() {
                         </div>
                         <div className="radio-content">
                             <div className="radio-btn">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
                             </div>
 
                             <div className="radio-options">
@@ -76,7 +79,7 @@ export default function Checkout() {
                         </div>
                         <div className="radio-content">
                             <div className="radio-btn">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
                             </div>
 
                             <div className="radio-options">
@@ -85,7 +88,7 @@ export default function Checkout() {
                         </div>
                         <div className="radio-content">
                             <div className="radio-btn">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" /> 
+                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" /> 
                             </div>
 
                             <div className="radio-options">
@@ -98,7 +101,7 @@ export default function Checkout() {
                 </div>
             </div>
             <div className='sec-2'>
-                <Bag/>
+                <Bag subTotal = {location.state.grandTotal} totalQuantity = {location.state.totalQuantity}/>
             </div>
         </div>
     </>

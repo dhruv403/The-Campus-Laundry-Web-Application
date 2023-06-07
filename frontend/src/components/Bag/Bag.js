@@ -5,7 +5,8 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 import paytmSound from './order_placed2.mp3';
 import { useNavigate, Link } from 'react-router-dom'
-export default function Bag() {
+export default function Bag(props) {
+  const { subTotal } = props;
 
     const [showPopup, setShowPopup] = useState(false);
 
@@ -32,7 +33,7 @@ export default function Bag() {
     <>
         <div className="bag-cont">
             <h1>Your Bag</h1>
-            <h3>Total Items: 5</h3>
+            <h3>Total Items: {props.totalQuantity}</h3>
             <div class="dashed-line"> </div>
             <div className="bag-big-flex">
 
@@ -41,7 +42,7 @@ export default function Bag() {
                         Sub Total
                     </div>
                     <div className="flex-amount-bag">
-                        ₹50
+                    {subTotal}
                     </div>
                 </div>
                 <div className="bag-flex">
@@ -57,7 +58,7 @@ export default function Bag() {
                         Grand Total
                     </div>
                     <div className="flex-amount-bag">
-                        ₹60.60
+                        ₹{subTotal + 10.60}
                     </div>
                 </div>
             </div>

@@ -11,6 +11,7 @@ const JWT_SECRET = 'Atul'
 var jwt = require('jsonwebtoken');
 
 const fetchuser = require('../middleware/fetchuser')
+const Item = require('../models/Item')
 
 //Route1: Create a User using: POST "/api/auth/createuser". Doesn't requires authentication.
 
@@ -115,4 +116,21 @@ router.post('/getuser', fetchuser ,async (req,res)=>{
         res.status(500).send('Internal Server Error');
     }
 })
+
+router.get('/checkout', (req,res) => {
+    console.log("hello");
+    console.log(req.body);
+})
+
+// Route to fetch item prices
+router.get('/items', async (req, res) => {
+    try {
+      const items = await Item.find({}, 'name price');
+      res.json(items);
+    } catch (error) {
+      console.error('Error fetching items:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+  
 module.exports = router

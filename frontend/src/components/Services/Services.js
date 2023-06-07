@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, {useState, useEffect } from 'react'
 import './Services.css'
 import washAndFold from '../../images/wash-fold.jpeg'
 import ironAndFold from '../../images/iron-fold.jpg'
@@ -9,11 +9,21 @@ import {useNavigate} from "react-router-dom";
 
 export default function Services() {
     const navigate = useNavigate();
+    const [selectedService, setSelectedService] = useState(0);
 
-    const handleService = (e) => {
-        e.preventDefault();
-        navigate('/order');
-    }
+    const handleService = async (serviceNumber) => {
+      await setSelectedService(serviceNumber);
+      console.log(serviceNumber);
+      console.log(selectedService);
+      navigate('/order',  {
+        state: {
+            // selectedService
+            serviceNumber
+        },
+    });
+    };
+
+    
   return (
     <div className='services-sec1'>
 
@@ -34,7 +44,7 @@ export default function Services() {
                         <div className="services-card1-text">All your regular wear garments will be washed, steam ironed and neatly packed for delivery.</div>
                     </div>
                     <div className="services-card1-submit">
-                        <button onClick={handleService}>Select Service</button>
+                        <button onClick={() => handleService(0)}>Select Service</button>
                     </div>
                 </div>
             </div>
@@ -49,7 +59,7 @@ export default function Services() {
                         <div className="services-card2-text">Just in case you choose not to use our steam ironing services we will wash and fold them for you.</div>
                     </div>
                     <div className="services-card2-submit">
-                        <button onClick={handleService}>Select Service</button>
+                        <button onClick={() => handleService(1)}>Select Service</button>
                     </div>
                 </div>
             </div>
@@ -64,7 +74,7 @@ export default function Services() {
                         <div className="services-card3-text">Just in case you choose to use only our steam ironing services we will iron and fold them for you.</div>
                     </div>
                     <div className="services-card3-submit">
-                        <button onClick={handleService}>Select Service</button>
+                        <button onClick={() => handleService(2)}>Select Service</button>
                     </div>
                 </div>
             </div>
@@ -85,7 +95,7 @@ export default function Services() {
 </div>
                     </div>
                     <div className="services-card1-submit">
-                        <button onClick={handleService}>Select Service</button>
+                        <button onClick={() => handleService(3)}>Select Service</button>
                     </div>
                 </div>
             </div>
@@ -100,7 +110,7 @@ export default function Services() {
                         <div className="services-card2-text">You can use our emergency service to receive services easily and quickly in our machines using very safe.</div>
                     </div>
                     <div className="services-card2-submit">
-                        <button onClick={handleService}>Select Service</button>
+                        <button onClick={() => handleService(4)}>Select Service</button>
                     </div>
                 </div>
             </div>
@@ -115,7 +125,7 @@ export default function Services() {
                         <div className="services-card3-text">You can get Best Price, Quality Service, Doorstep Pickup & Delivery Service, Hygiene & Fresh Laundry</div>
                     </div>
                     <div className="services-card3-submit">
-                        <button onClick={handleService}>Select Service</button>
+                        <button onClick={() => handleService(5)}>Select Service</button>
                     </div>
                 </div>
             </div>
