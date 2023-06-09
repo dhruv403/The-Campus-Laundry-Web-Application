@@ -2,9 +2,20 @@ import React from 'react'
 import basket from '../../images/basket_navbar.gif'
 import logo from '../../images/Logo.png'
 import './Navbar.css'
-import { NavLink, Link } from 'react-router-dom'
-// import 'D:\Web Development\Project\Laundry Website\frontend\src\App.css'
-function Navbar() {
+import { NavLink, useNavigate } from 'react-router-dom'
+
+function Navbar() 
+{
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    // localStorage.removeItem('currentUser');
+    navigate('/');
+  }
+
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  const userName = (user.userEmail).split("@")[0];
   return (
     <>
         <nav className="navbar navbar-expand-sm navbar-light nav_page" style={{fontSize: '25px'}} >
@@ -18,6 +29,9 @@ function Navbar() {
           <div className="collapse navbar-collapse justify-content-end"  id="navbarSupportedContent">
             <ul className="navbar-nav">
                 <li className="nav-item  navbar_items">
+                  <a className="nav-link " aria-current="page" href="#">Welcome {userName}</a>
+                </li>
+                <li className="nav-item  navbar_items">
                   <NavLink className="nav-link " aria-current="page" to="/home">Home</NavLink>
                 </li>
                 <li className="nav-item  navbar_items">
@@ -30,12 +44,13 @@ function Navbar() {
                   <NavLink className="nav-link" to="/contactus">Contact Us</NavLink>
                 </li>			
                 <li className="nav-item ">
-                  <NavLink className="nav-link" to="/home"> <img style={{height:'45px'}} src={basket} alt="" /> </NavLink>
+                  <NavLink to="/" type="button" onClick={handleLogout}>
+                    <img style={{height:'45px'}} src={basket} alt="" />
+                  </NavLink>
                 </li>			
             </ul>		  
           </div>
-
-          </div>
+        </div>
 	</nav>
     </>
   )

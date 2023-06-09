@@ -19,19 +19,20 @@ export default function Login() {
     });
     const json = await response.json();
     console.log(json);
-    if(json.success){
+    
+    if(json.success)
+    {
       //redirect
+      const user = {
+        userEmail: credentials.email
+      };
       localStorage.setItem('token',json.authtoken);
+      localStorage.setItem("currentUser", JSON.stringify(user));
       navigate('/home');
     }
     else{
       alert('Invalid Credentials...')
     }
-  }
-
-  const handleSignUp = (e) => {
-    e.preventDefault();
-    navigate('/signup');
   }
 
   const onChange = (e) =>{
