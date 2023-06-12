@@ -1,17 +1,13 @@
-.login{
+.admin-login{
     /* border: 2px solid yellow; */
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../../images/back.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-
+    background-image: url("../../images/admin-back.jpg");
 }
 
-.login-sec1{
+.admin-login-sec1{
     /* border: 2px solid blue; */
     height: 40vw;
     width: 60vw;
@@ -20,7 +16,7 @@
     box-shadow: 0px 0px 20px 0px #3e87c3;
 }
 
-.sec-left{
+.admin-sec-left{
     /* border: 2px solid red; */
     flex: 1;
     background-color: whitesmoke;
@@ -30,7 +26,7 @@
     flex-direction: column;
 }
 
-.login-logo
+.admin-login-logo
 {
     width: 25%;
     /* border: 2px solid red; */
@@ -40,7 +36,7 @@
     justify-content: flex-start;
 }
 
-.login-img{
+.admin-login-img{
     width: 100%;
     flex: 5;
     /* border: 2px solid red; */
@@ -51,14 +47,14 @@
 
 }
 
-.login-img img{
+.admin-login-img img{
     margin-top: -125px;
     /* border: 2px solid red; */
 
 }
 
-.sec-right{
-    /* border: 2px solid green; */
+.admin-sec-right{
+    /* border: 2px solid yellow; */
     flex: 1;
     display: flex;
     justify-content: center;
@@ -67,7 +63,7 @@
     background-color: white;
 }
 
-.container{
+.admin-container{
     /* border: 2px solid blue; */
     width: 350px;
     height: 500px;
@@ -78,8 +74,31 @@
     justify-content: center;
 }
 
-.container-top{
-    /* border: 2px solid orangered; */
+.admin-container-top{
+    flex:2;
+    /* border: 2px solid yellow; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight:400;
+}
+.admin-container-top-1{
+    /* border: 2px solid yellow; */
+    width: 90%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight:400;
+}
+.admin-container-top-2{
+    /* border: 2px solid yellow; */
     width: 90%;
     height: 50px;
     display: flex;
@@ -90,39 +109,31 @@
     font-weight:400;
 }
 
-.container-mid{
+.admin-container-mid{
+    flex:4;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 2px orangered solid; */
     width: 100%;
-    height: 300px;
+    justify-content: center;
+    align-items: flex-start;
+    /* border: 2px orangered solid; */
 }
 .logbutton{
     /* border: red 2px solid; */
+    margin-top: 10px;
     display: flex;
     justify-content: center;
 }
-.container-bottom{
-    border: 1px  black solid;
-    height: 100vh;
-    width: 80%;
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.container-bottom-1{
-    height: 100vh;
-    width: 80%;
+.admin-container-bottom{
+    flex:1;
+    /* border: 1px  black solid; */
     margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container-last{
-    margin-top: 20px;
+.admin-container-last{
+    /* margin-top: 20px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,7 +142,7 @@
     height: 40px;
     font-size: 15px;
 }
-.container-last a{
+.admin-container-last a{
     color: black;
     margin-right: 5px;
     margin-left: 5px;
@@ -141,7 +152,7 @@
     justify-content: flex-start;
 }
 
-.container-last-signup{
+.admin-container-last-signup{
     /* border: 2px red solid; */
     display: flex;
     justify-content: center;
@@ -151,7 +162,7 @@
     margin-top: 20px;
 }
 
-.container-last-signup p{
+.admin-container-last-signup p{
     display: flex;
     justify-content: center;
     align-items: center;

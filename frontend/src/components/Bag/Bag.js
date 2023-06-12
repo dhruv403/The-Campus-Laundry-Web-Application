@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 import paytmSound from './order_placed2.mp3';
-import { useNavigate, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 export default function Bag(props) {

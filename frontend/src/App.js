@@ -1,4 +1,4 @@
-import HelloWorld from "./components/HelloWorld";
+// import HelloWorld from "./components/HelloWorld";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home";
 import Services from "./components/Services/Services";
@@ -6,9 +6,9 @@ import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 import ReviewsAndRatings from "./components/ReviewsAndRatings/ReviewsAndRatings";
 import Footer from "./components/Footer/Footer";
 import Checkout from "./components/Checkout/Checkout";
-import Counter from "./components/Counter/Counter";
+// import Counter from "./components/Counter/Counter";
 import Order from "./components/Order/Order";
-import Bag from "./components/Bag/Bag";
+// import Bag from "./components/Bag/Bag";
 import Login from './components/Login/Login'
 import Contact from '../src/components/Contact/Contact'
 import SignUp from '../src/components/SignUp/Signup'
@@ -19,8 +19,9 @@ import {
 } from "react-router-dom";
 import Success from "./components/Success/Success";
 import Dashboard from "./components/Dashboard/Dashboard";
-import React, {useEffect} from 'react'
+import React from 'react'
 import ScrollToTop from "./components/ScrollToTop";
+import AdminLogin from "./components/AdminLogin/AdminLogin";
 
 
 function App() {  
@@ -50,6 +51,7 @@ function App() {
           <Route exact path="/order" element={[ <ScrollToTop/>,<Navbar/>,<Order/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
           <Route exact path="/contactus" element={[ <ScrollToTop/>,<Navbar/>,<Contact/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
           <Route exact path="/success" element={[ <ScrollToTop/>,<Navbar/>,<Success/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
+          <Route exact path="/admin-login" element={<AdminLogin/>}></Route>
           
         </Routes>
       </BrowserRouter>

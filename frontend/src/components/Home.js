@@ -1,6 +1,6 @@
 import React from 'react'
 import home_page_pic from '../images/home_page_pic.png'
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 function Home() {
   return (
     <>

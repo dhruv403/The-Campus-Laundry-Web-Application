@@ -21,7 +21,7 @@ export default function Signup() {
             return;
         }
 
-        if(cpassword != password)
+        if(cpassword !== password)
         {
             alert("Password do not Match");
             return;
