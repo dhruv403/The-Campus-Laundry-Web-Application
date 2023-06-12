@@ -40,7 +40,15 @@ const OrderSchema = new Schema({
   status: {
     type: Boolean,
     default: false,
-  }
+  },
+  orderDate: {
+    type: String,
+    default: () => {
+        const date = new Date();
+        const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    },
+},
 //   user: {
 //     type: mongoose.Schema.Types.ObjectId,
 //     ref: 'User',
@@ -57,6 +65,7 @@ const orderValidationSchema = Joi.object({
   paymentMethod: Joi.string().required(),
   hashMap: Joi.object().required(),
   status: Joi.boolean().default(false),
+  orderDate: Joi.string(),
   // Add other fields and their validation rules
 });
 
