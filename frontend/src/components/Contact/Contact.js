@@ -1,12 +1,3 @@
-// import MailIcon from "@mui/icons-material/Mail";
-// import PhoneIcon from "@mui/icons-material/Phone";
-// import YouTubeIcon from "@mui/icons-material/YouTube";
-// import LinkedInIcon from "@mui/icons-material/LinkedIn";
-// import InstagramIcon from "@mui/icons-material/Instagram";
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import LocationOnIcon from "@mui/icons-material/LocationOn";
-// import TelegramIcon from "@mui/icons-material/Telegram";
-
 import  MailIcon from "../../images/mailicon.png";
 import  PhoneIcon from "../../images/smartphone.png";
 import  YouTubeIcon from "../../images/youtube.png";
