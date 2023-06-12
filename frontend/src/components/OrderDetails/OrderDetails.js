@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import './OrderDetails.css'
 
 export default function OrderDetails(props) {
+  console.log(props);
   const ref = useRef();
   useEffect(() => {
     if(!props.status)
