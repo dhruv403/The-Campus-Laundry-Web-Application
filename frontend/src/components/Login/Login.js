@@ -8,7 +8,8 @@ import GoogleLogo from '../../images/google.png';
 export default function Login() {
   const [credentials,setCredentials] = useState({email:'', password:''})
   const navigate = useNavigate();
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => 
+  {
     e.preventDefault();
     let response = await fetch("http://localhost:5000/api/auth/login", {
         method: 'POST',
@@ -37,6 +38,11 @@ export default function Login() {
 
   const onChange = (e) =>{
     setCredentials({...credentials, [e.target.name]: e.target.value})
+  }
+
+  const handleAdminLogin = (e) =>{
+    e.preventDefault();
+    navigate('/admin-login');
   }
 
   return (
@@ -75,11 +81,14 @@ export default function Login() {
               <img src={GoogleLogo} height={'20px'} alt="" />
               Continue with Google
             </div>
+            <div className="container-bottom-1">
+              <button type="button" class="btn btn-secondary" onClick={handleAdminLogin}>Admin Login</button>
+            </div>
             <div className="container-last-signup">
                 <p>New User? <Link to='/signup' className='mx-1' id='login-signup'>SignUp</Link> </p> 
             </div>
             <div className="container-last">
-              <a href='#'> Terms of Use  </a> |  <a href='#'> Privacy Policy </a>
+              <a href='www.google.com'> Terms of Use  </a> |  <a href='www.google.com'> Privacy Policy </a>
             </div>
           </div>
         </div>

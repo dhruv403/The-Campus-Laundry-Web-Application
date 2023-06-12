@@ -29,7 +29,7 @@ function Navbar()
           <div className="collapse navbar-collapse justify-content-end"  id="navbarSupportedContent">
             <ul className="navbar-nav">
                 <li className="nav-item  navbar_items">
-                  <a className="nav-link " aria-current="page" href="#">Welcome {userName}</a>
+                <NavLink className="nav-link " aria-current="page" to="/home">Welcome {userName}</NavLink>
                 </li>
                 <li className="nav-item  navbar_items">
                   <NavLink className="nav-link " aria-current="page" to="/home">Home</NavLink>

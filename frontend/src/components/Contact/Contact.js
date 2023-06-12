@@ -5,7 +5,7 @@ import  LinkedInIcon from "../../images/linkedin.png";
 import InstagramIcon from "../../images/instagram.png";
 import  FacebookIcon from "../../images/facebook.png";
 import  LocationOnIcon from "../../images/location.png";
-import  TelegramIcon from "../../images/telegram.png";
+// import  TelegramIcon from "../../images/telegram.png";
 
 import "./Contact.css";
 import React, {useState} from "react";

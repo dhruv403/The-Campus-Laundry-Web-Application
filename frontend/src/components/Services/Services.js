@@ -1,5 +1,5 @@
 
-import React, {useState, useEffect } from 'react'
+import React, {useState} from 'react'
 import './Services.css'
 import washAndFold from '../../images/wash-fold.jpeg'
 import ironAndFold from '../../images/iron-fold.jpg'

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import admin from '../../images/admin_logo_footer.png'
 import './Footer.css'
 import { NavLink } from 'react-router-dom'
