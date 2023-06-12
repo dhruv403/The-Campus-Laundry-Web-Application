@@ -33,7 +33,7 @@ function App() {
           <Route exact path="/home" element={[ <ScrollToTop/>,<Navbar/>,<Home/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
           <Route exact path="/services" element={[ <ScrollToTop/>,<Navbar/>,<Services/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
           <Route exact path="/whychooseus" element={[ <ScrollToTop/>,<Navbar/>,<WhyChooseUs/>,<ReviewsAndRatings/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
-          <Route exact path="/reviews" element={[ <ScrollToTop/>,<Navbar/>,<ReviewsAndRatings/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
+          <Route exact path="/hello" element={[ <ScrollToTop/>,<Navbar/>,<ReviewsAndRatings/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
 
           {/* <Route exact path="/checkout" element={[ <ScrollToTop/>,<Navbar/>,<Checkout/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route> */}
           <Route exact path="/checkout" element={

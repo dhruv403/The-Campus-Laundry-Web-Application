@@ -9,6 +9,7 @@ import  TelegramIcon from "../../images/telegram.png";
 
 import "./Contact.css";
 import React, {useState} from "react";
+import axios from 'axios'
 
 export default function Contact() {
   const [data, setData] = useState({
@@ -17,15 +18,28 @@ export default function Contact() {
     mobile: "",
     message: ""
   });
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    try {
+      const obj = {
+        name: data.fullname,
+        email : data.email,
+        contactNo: data.mobile,
+        message: data.message
+      }
+      const response = await axios.post('http://localhost:5000/api/contact/sendMessage', obj);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+    alert("Your response has been recorded");
     setData({
       fullname: "",
       email: "",
       mobile: "",
       message: ""
     })
-    alert("Your response has been recorded");
   };
   const handleOnChange = (e) => {
     const name = e.target.name;
