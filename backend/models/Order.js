@@ -49,10 +49,6 @@ const OrderSchema = new Schema({
         return date.toLocaleDateString('en-US', options);
     },
 },
-//   user: {
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: 'User',
-//   },
 });
 
 
