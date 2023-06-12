@@ -21,7 +21,7 @@ export default function Dashboard() {
 
         const response = await axios.post('http://localhost:5000/api/order/getOrder', {}, config);
         setOrders(response.data.orders);
-        // console.log(orders);
+        // console.log(response.data.orders);
       } catch (error) {
         console.error(error);
       }
@@ -30,17 +30,17 @@ export default function Dashboard() {
     fetchOrders();
   }, []);
 
-  useEffect(() => {
-    // This effect will be triggered whenever `orders` state changes
-    console.log("Orders updated:", orders);
-  }, [orders]);
+  // useEffect(() => {
+  //   // This effect will be triggered whenever `orders` state changes
+  //   console.log("Orders updated:", orders);
+  // }, [orders]);
   return (
     <>
         <div className="dashboard-cont">
             <div className="dash-head"><h1 className='hello-dash'>Dashboard</h1></div>
             {orders.map((order) => (
             <div className="dash-order-1" key={order._id}>
-              <OrderDetails id={order.orderId} status={order.status} date={order.orderDate} />
+              <OrderDetails id={order.orderId} status={order.status} date={order.orderDate} orderList={order.hashMap} />
             </div>
           ))}
             {/* <div className="dash-order-1"> <OrderDetails id={272} status={false} date={"Tues,4th April,2023"}/> </div>

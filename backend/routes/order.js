@@ -53,12 +53,11 @@ router.post('/orders', async (req, res) => {
 
 router.post('/getOrder',fetchuser, async (req, res) => {
   try {
-    // const email  = req.headers['email'];
     const { email } = req.user;
     // console.log(req.user);
     const orders = await Order.find({ email }).sort({ orderId: -1 });
-    res.json({ orders });
     console.log(orders);
+    res.json({ orders });
   } catch (error) {
     console.error(error.message);
     res.status(500).send('Internal Server Error');
