@@ -48,7 +48,15 @@ const OrderSchema = new Schema({
         const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
         return date.toLocaleDateString('en-US', options);
     },
-},
+  },
+  totalPrice: {
+    type: Number,
+    required: true,
+  },
+  serviceNo: {
+    type: Number,
+    required:true
+  }
 });
 
 
@@ -62,6 +70,8 @@ const orderValidationSchema = Joi.object({
   hashMap: Joi.object().required(),
   status: Joi.boolean().default(false),
   orderDate: Joi.string(),
+  totalPrice: Joi.number().required(),
+  serviceNo: Joi.number().valid(0, 1, 2, 3, 4, 5).required()
   // Add other fields and their validation rules
 });
 

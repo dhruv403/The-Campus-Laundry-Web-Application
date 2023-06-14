@@ -9,7 +9,7 @@ import Bag from '../Bag/Bag'
 
 export default function Checkout(props) {
 const location = useLocation();
-// console.log(location.state.itemQuantities);
+// console.log(location.state.serviceNo);
 
 const [name, setName] = useState("");
 const [email, setEmail] = useState("")
@@ -144,6 +144,7 @@ const handleNameChange = (e) => {
                 hostel = {hostel}
                 roomNo = {roomNo}
                 orderData = {location.state.itemQuantities}
+                serviceNo = {location.state.serviceNo}
                 />
             </div>
         </div>

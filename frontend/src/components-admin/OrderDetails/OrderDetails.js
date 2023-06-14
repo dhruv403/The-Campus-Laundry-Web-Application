@@ -45,7 +45,7 @@ export default function OrderDetails(props) {
             </div>
             <div className="od-sec-2-admin">
                 <div className="od-sec-2-p1-admin"> <h3>{props.date}</h3> </div>
-                <div className="od-sec-2-amount-admin"> <h3>Amount: ₹50 </h3> </div>
+                <div className="od-sec-2-amount-admin"> <h3>Amount: ₹{props.amount} </h3> </div>
                 <div className="od-sec-2-p2-admin"><button onClick={show}> View Details </button> </div>
             </div>
         </div>

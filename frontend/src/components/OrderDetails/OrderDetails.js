@@ -42,13 +42,16 @@ export default function OrderDetails(props) {
           <div className="popup-bag-content" onClick={(e) => e.stopPropagation()}>
             <button className="bag-close-btn" onClick={hide}>
               <FontAwesomeIcon icon={faTimesCircle} size="2x" />
-            </button>
-            {/* <div> */}
-              {Object.entries(props.orderList).map((key, value) => (
-                
-                <h5> {key[0]}: {key[1]}</h5>
-              ))}
-            {/* </div> */}
+            </button >
+            <div style={{'margin': '1rem'}}>
+              <h3> Service No: {props.serviceNo} </h3>
+              {
+                Object.entries(props.orderList).map((key, value) => (
+                  
+                  <h5> {key[0]}: {key[1]}</h5>
+                ))
+              }
+            </div>
             {props.status && <h5>Order Collected Successfully!</h5>}
             {!props.status && <h5>Order in Progress!</h5>}
           </div>
