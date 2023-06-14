@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const fetchuser = require('../middleware/fetchuser');
 const  { Order, orderValidationSchema } = require('../models/Order');
+const { findOneAndUpdate } = require('../models/Item');
 
 // Route: POST /api/order/orders
 // Description: Store order details in the database
@@ -71,12 +72,35 @@ router.post('/getOrderAdmin',fetchuser, async (req, res) => {
   try {
     // console.log("hello");
     const orders = await Order.find({}).sort({ orderId: -1 });
-    console.log(orders);
+    // console.log(orders);
     res.json({ orders });
   } catch (error) {
     console.error(error.message);
     res.status(500).send('Internal Server Error');
   }
 });
+
+router.put('/changeStatus', fetchuser, async(req, res) => {
+  try {
+    const {_id, orderId, newStatus, contactNo} = req.body;
+    // console.log(req.body)
+    const updatedOrder = await Order.findOneAndUpdate(
+      {
+        _id,
+        orderId,
+        contactNo
+      },
+      { $set: {status: newStatus} },
+      {new: true}
+    );
+
+    // console.log(updatedOrder);
+    res.json(updatedOrder); 
+
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Internal Server Error');
+  }
+})
 
 module.exports = router;

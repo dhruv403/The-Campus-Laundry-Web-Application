@@ -48,6 +48,8 @@ export default function Order() {
                   status={order.status}
                   date={order.orderDate}
                   amount = {order.totalPrice}
+                  serviceNo = {order.serviceNo}
+                  uniqueKeyword={order._id}
                   />
                </div>
             ))}
