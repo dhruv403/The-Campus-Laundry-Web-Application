@@ -40,7 +40,13 @@ export default function Dashboard() {
             <div className="dash-head"><h1 className='hello-dash'>Dashboard</h1></div>
             {orders.map((order) => (
             <div className="dash-order-1" key={order._id}>
-              <OrderDetails id={order.orderId} status={order.status} date={order.orderDate} orderList={order.hashMap} />
+              <OrderDetails 
+              id={order.orderId}
+               status={order.status} 
+               date={order.orderDate} 
+               orderList={order.hashMap}
+               serviceNo = {order.serviceNo}
+                />
             </div>
           ))}
             {/* <div className="dash-order-1"> <OrderDetails id={272} status={false} date={"Tues,4th April,2023"}/> </div>

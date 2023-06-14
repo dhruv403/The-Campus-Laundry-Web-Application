@@ -9,11 +9,11 @@ const  { Order, orderValidationSchema } = require('../models/Order');
 router.post('/orders', async (req, res) => {
   try {
     // res.send("hello")
-    const { name, email, contactNo, hostel, roomNo, paymentMethod, hashMap } = req.body;
+    const { name, email, contactNo, hostel, roomNo, paymentMethod, hashMap, totalPrice, serviceNo } = req.body;
 
 
+    console.log(serviceNo);
     const { error } = orderValidationSchema.validate(req.body);
-    console.log(error);
     if (error) {
       // Return a response indicating validation error
       return res.status(400).json({ error: error.details[0].message });
@@ -37,7 +37,9 @@ router.post('/orders', async (req, res) => {
       hostel,
       roomNo,
       paymentMethod,
-      hashMap
+      hashMap,
+      totalPrice,
+      serviceNo
       //user: req.user.id, // Assuming req.user.id contains the authenticated user's ID
     });
     console.log(order);

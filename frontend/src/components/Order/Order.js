@@ -8,7 +8,7 @@ import axios from 'axios';
 export default function Order(props) {
   const location = useLocation(); 
 //   console.log(location);
-  console.log(location.state.serviceNumber);
+  
   const navigate = useNavigate();
   const [items, setItems] = useState([]);
   const [itemPrices, setItemPrices] = useState({});
@@ -39,11 +39,13 @@ export default function Order(props) {
   }, []);
 
   const handleOrder = () => {
+    console.log(location.state.serviceNumber);
     navigate("/checkout", {
         state: {
             grandTotal,
             totalQuantity,
-            itemQuantities
+            itemQuantities,
+            serviceNo: (location.state.serviceNumber)
         },
     });
 

@@ -46,8 +46,12 @@ export default function Bag(props) {
         hostel: props.hostel,
         roomNo: props.roomNo,
         paymentMethod: props.paymentMethod,
-        hashMap: props.orderData
+        hashMap: props.orderData,
+        totalPrice: props.subTotal,
+        serviceNo: props.serviceNo
       }
+
+      console.log(orderSummary);
       
       for (let key in orderSummary.hashMap) {
         // Check if the value is 0
@@ -109,7 +113,7 @@ export default function Bag(props) {
                         Delivery Charges
                     </div>
                     <div className="flex-amount-bag">
-                        ₹10.60
+                        ₹0
                     </div>
                 </div>
                 <div className="bag-flex">
@@ -117,7 +121,7 @@ export default function Bag(props) {
                         Grand Total
                     </div>
                     <div className="flex-amount-bag">
-                        ₹{subTotal + 10.60}
+                        ₹{subTotal }
                     </div>
                 </div>
             </div>

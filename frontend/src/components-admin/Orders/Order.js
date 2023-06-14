@@ -46,7 +46,8 @@ export default function Order() {
                   payementMethod = {order.payementMethod}
                   orderList = {order.hashMap}
                   status={order.status}
-                   date={order.orderDate}
+                  date={order.orderDate}
+                  amount = {order.totalPrice}
                   />
                </div>
             ))}
