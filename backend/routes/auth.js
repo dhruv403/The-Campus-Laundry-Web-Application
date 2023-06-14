@@ -140,7 +140,7 @@ router.post('/adminlogin',[
         let user = await Admin.findOne({email});
         if(!user)
         {
-            console.log(password);
+            // console.log(password);
             success = false;
             return res.status(400).json({error: 'Invalid User'});
         }

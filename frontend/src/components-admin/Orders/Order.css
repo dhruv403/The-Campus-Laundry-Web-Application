@@ -1,0 +1,50 @@
+.dashboard-cont-admin {
+    color: #3e87c3;
+    font-family: Open Sans;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+/* .dash-head h1 {
+    font-weight: 500;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.hello-dash::after{
+    content:'';
+    height:4px;
+    width:12%;
+    background:#3e87c3;
+    position:absolute;
+    left:calc(54% - 10%);
+    bottom:530px;
+    
+  } */
+
+  .dash-head-admin h1 {
+    font-weight: 500;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    position: relative; /* add relative positioning to the parent element */
+}
+
+.hello-dash-admin::after {
+    content: '';
+    height: 4px;
+    width: 9.5%;
+    background: #3e87c3;
+    position: absolute;
+    left: 50.4%; /* set the left position to 50% */
+    transform: translateX(-50%); /* use transform to center the underline */
+    bottom: -5px; /* set the bottom position to adjust the spacing between text and underline */
+}
+
+
+.dash-order-1-admin {
+    margin: 2rem 1.5rem;
+}
