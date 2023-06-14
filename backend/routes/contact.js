@@ -36,4 +36,30 @@ router.post('/sendMessage',fetchuser, async (req, res) => {
   }
 });
 
+router.get('/getMessage', async(req, res) => {
+  try {
+    console.log("hello");
+    // const messages = await Messages.find().sort((a, b) => {
+    //   const dateA = new Date(a.messageDate);
+    //   const dateB = new Date(b.messageDate);
+    //   return dateA - dateB;
+    // });;
+
+    let message;
+    message = await Messages.find().exec();
+      
+      // Sort messages by messageDate
+      message.sort((a, b) => {
+        const dateA = new Date(a.messageDate);
+        const dateB = new Date(b.messageDate);
+        return dateB - dateA;
+      });
+    console.log(message);
+    res.json(message);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+})
+
 module.exports = router;
