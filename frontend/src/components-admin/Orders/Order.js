@@ -53,10 +53,7 @@ export default function Order() {
                   />
                </div>
             ))}
-            <div className="dash-order-1-admin"> <OrderDetails id={500} status={true} date={"Sat,1st April,2023"}/> </div>
-            <div className="dash-order-1-admin"> <OrderDetails id={521} status={true} date={"Wed,21st March,2023"}/> </div>
-            <div className="dash-order-1-admin"> <OrderDetails id={690} status={true} date={"Tues,1st March,2023"}/> </div>
-            <div className="dash-order-1-admin"> <OrderDetails id={700} status={true} date={"Tues,1st March,2023"}/> </div>
+            
         </div>
     </>
   )

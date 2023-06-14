@@ -41,10 +41,10 @@ export default function OrderDetails(props) {
             'email' : user.userEmail
           }
         };
-        console.log(data);
+        // console.log(data);
   
         const response = await axios.put('http://localhost:5000/api/order/changeStatus', data, config);
-        console.log(response.data.status);
+        // console.log(response.data.status);
         setStatus(response.data.status);
         if(response.data.status) {
           alert("The order marked completed!!!")
