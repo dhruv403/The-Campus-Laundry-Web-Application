@@ -38,7 +38,7 @@ function Navbar()
                   <NavLink className="nav-link" to="/admin-dashboard">Dashboard</NavLink>
                 </li>			
                 <li className="nav-item  navbar_items" id='next_line'>
-                  <NavLink className="nav-link " to="/whychooseus">Orders</NavLink>
+                  <NavLink className="nav-link " to="/admin-orders">Orders</NavLink>
                 </li>			
                 <li className="nav-item  navbar_items">
                   <NavLink className="nav-link" to="/contactus">Support</NavLink>
