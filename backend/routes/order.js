@@ -71,7 +71,7 @@ router.post('/getOrder',fetchuser, async (req, res) => {
 router.post('/getOrderAdmin',fetchuser, async (req, res) => {
   try {
     // console.log("hello");
-    const orders = await Order.find({}).sort({ orderId: -1 });
+    const orders = await Order.find({}).sort({status: 1}).sort({ orderId: -1 });
     // console.log(orders);
     res.json({ orders });
   } catch (error) {

@@ -52,6 +52,7 @@ export default function OrderDetails(props) {
         else {
           alert("The order is not completed yet...")
         }
+        window.location.reload();
 
       } catch (error) {
         console.log(error);
