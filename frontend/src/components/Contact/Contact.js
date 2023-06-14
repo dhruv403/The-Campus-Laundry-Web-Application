@@ -28,7 +28,16 @@ export default function Contact() {
         contactNo: data.mobile,
         message: data.message
       }
-      const response = await axios.post('http://localhost:5000/api/contact/sendMessage', obj);
+      const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+        const config = {
+          headers: {
+            'auth-token' :token,
+            'email': user.userEmail
+          }
+        };
+
+      const response = await axios.post('http://localhost:5000/api/contact/sendMessage', obj, config);
       console.log(response.data);
     } catch (error) {
       console.log(error);

@@ -25,6 +25,7 @@ import AdminLogin from "./components/AdminLogin/AdminLogin";
 import AdminDashboard from "./components-admin/AdminDashboard/AdminDashboard"
 import AdminNavbar from "./components-admin/Navbar/Navbar"
 import AdminOrderList from "./components-admin/Orders/Order"
+import Support from "./components-admin/Support/Support"
 
 function App() {  
   return (
@@ -70,6 +71,14 @@ function App() {
              <ScrollToTop />
              <AdminNavbar/>
              <AdminOrderList/>
+             <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
+           </>}></Route>
+
+          <Route exact path="/customer-support" element={
+             <>
+             <ScrollToTop />
+             <AdminNavbar/>
+             <Support/>
              <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
            </>}></Route>
           

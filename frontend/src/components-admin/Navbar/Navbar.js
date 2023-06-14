@@ -41,7 +41,7 @@ function Navbar()
                   <NavLink className="nav-link " to="/admin-orders">Orders</NavLink>
                 </li>			
                 <li className="nav-item  navbar_items">
-                  <NavLink className="nav-link" to="/contactus">Support</NavLink>
+                  <NavLink className="nav-link" to="/customer-support">Support</NavLink>
                 </li>			
                 <li className="nav-item ">
                   <NavLink to="/" type="button" onClick={handleLogout}>
