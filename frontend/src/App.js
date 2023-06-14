@@ -23,6 +23,7 @@ import React from 'react'
 import ScrollToTop from "./components/ScrollToTop";
 import AdminLogin from "./components/AdminLogin/AdminLogin";
 import AdminDashboard from "./components-admin/AdminDashboard/AdminDashboard"
+import AdminNavbar from "./components-admin/Navbar/Navbar"
 
 
 function App() {  
@@ -55,7 +56,17 @@ function App() {
           
           {/* Admin Routes */}
           <Route exact path="/admin-login" element={<AdminLogin/>}></Route>
-          <Route exact path="/admin-dashboard" element={<AdminDashboard/>}></Route>
+         
+          <Route exact path="/admin-dashboard" element={
+             <>
+             <ScrollToTop />
+             <AdminNavbar/>
+             <AdminDashboard/>
+             <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
+           </>
+
+            }></Route>
+          <Route exact path="/admin-navbar" element={<AdminNavbar/>}></Route>
           
         </Routes>
       </BrowserRouter>
