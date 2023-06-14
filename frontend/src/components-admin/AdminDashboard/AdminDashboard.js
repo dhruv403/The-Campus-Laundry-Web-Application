@@ -11,16 +11,16 @@ export default function AdminDashboard() {
         </div>
         <div className="dashboard-a">
             <div className="option1">
-                <button type="button" class="btn btn-secondary btn-lg option-buttons">Total Orders</button>                
+                <button type="button" class="btn btn-secondary btn-lg option-buttons" >Total Orders</button>                
             </div>
             <div className="option2">
-                <button type="button" class="btn btn-secondary btn-lg option-buttons">Orders Pending</button>
+                <button type="button" class="btn btn-secondary btn-lg option-buttons" >Orders Pending</button>
             </div>
             <div className="option3">
-                <button type="button" class="btn btn-secondary btn-lg option-buttons">Order Completed</button>
+                <button type="button" class="btn btn-secondary btn-lg option-buttons" >Order Completed</button>
             </div>
             <div className="option4">
-                <button type="button" class="btn btn-secondary btn-lg option-buttons">Total Earnings</button>
+                <button type="button" class="btn btn-secondary btn-lg option-buttons" >Total Earnings</button>
             </div>
         </div>
         <div className="dashboard-b">

@@ -66,6 +66,7 @@
 }
 
 .option-buttons{
+    
     font-size: 20px;
     color:#3e87c3;
     font-family: 'Open Sans', sans-serif;
@@ -74,6 +75,11 @@
     height: 15vh;
     border-radius: 50px 50px 50px 50px;
     width: 60%;
+    /* outline: none;
+    cursor: default; */
+    /* pointer-events: none; */
+  /* user-select: none;
+  cursor: default; */
 }
 
 .dashboard-b{
