@@ -2,11 +2,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-.dashboard-navbar{
-    flex: 0.8;
-    border: 2px solid yellow;
+    width: 100vw;
 }
 
 .dashboard-title{
@@ -15,7 +11,7 @@
     color:#3e87c3;
     font-family: 'Open Sans', sans-serif;
     font-weight:400;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,39 +23,61 @@
     background:#3e87c3;
     position:absolute;
     left:calc(50% - 10%);
-    top:128px;
+    top:155px;
   }
 
+
+
 .dashboard-a{
-    flex: 1.5;
-    border: 2px solid yellow;
+    flex: 1.1;
+    /* border: 2px solid yellow; */
     display: flex;
     
 }
+#imagess{
+    height : 3rem;
+    margin: auto;
+    /* margin-bottom: px; */
+    display: block;
+}
 .option1{
     flex: 1;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.button-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+}
+.tag{
+    /* border: 2px solid red; */
+    flex: 0.7;
+}
+.option-content{
+    /* border: 2px solid red; */
+    flex: 1;
+}
 .option2{
     flex: 1;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .option3{
     flex: 1;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .option4{
     flex: 1;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,7 +102,7 @@
 
 .dashboard-b{
     flex: 0.5;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,5 +114,5 @@
 
 .dashboard-c{
     flex: 4;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
 }
