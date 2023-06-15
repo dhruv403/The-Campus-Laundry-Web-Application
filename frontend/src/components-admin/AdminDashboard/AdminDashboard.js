@@ -51,7 +51,7 @@ export default function AdminDashboard() {
             <u>Weekly Orders</u>
         </div>
         <div className="dashboard-c">
-            {/* <Graph/> */}
+            <Graph/>
         </div>
     </div>
   )
