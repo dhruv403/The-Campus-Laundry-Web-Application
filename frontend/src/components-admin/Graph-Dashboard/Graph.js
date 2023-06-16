@@ -35,7 +35,7 @@ export default function Graph() {
       
       };
       return (
-        <div className="App">
+        <div style={{'height':'30vh'}}>
           <Bar options={option} data={data} />
         </div>
       );

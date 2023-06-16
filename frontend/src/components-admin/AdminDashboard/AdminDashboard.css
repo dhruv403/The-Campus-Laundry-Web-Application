@@ -112,5 +112,8 @@
 
 .dashboard-c{
     flex: 5;
-    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid yellow;
 }  

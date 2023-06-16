@@ -143,7 +143,7 @@ export default function AdminDashboard() {
       <div className="dashboard-b">
         <u>Weekly Orders</u>
       </div>
-      <div className="dashboard-c">{renderOrdersContent()}</div>
+      <div className="dashboard-c"><Graph/></div>
     </div>
   );  
 }

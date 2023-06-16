@@ -13,7 +13,7 @@ router.post('/sendMessage',fetchuser, async (req, res) => {
 
 
     const { error } = messageValidationSchema.validate(req.body);
-    // console.log(error);
+    console.log(error);
     if (error) {
       // Return a response indicating validation error
       return res.status(400).json({ error: error.details[0].message });
