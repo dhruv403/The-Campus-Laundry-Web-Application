@@ -1,5 +1,5 @@
 .dashboard{
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -26,14 +26,12 @@
     top:155px;
   }
 
-
-
 .dashboard-a{
-    flex: 1.1;
+    flex: 1.8;
     /* border: 2px solid yellow; */
     display: flex;
-    
 }
+
 #imagess{
     height : 3rem;
     margin: auto;
@@ -113,6 +111,6 @@
 }
 
 .dashboard-c{
-    flex: 4;
+    flex: 5;
     /* border: 2px solid yellow; */
-}
+}  
