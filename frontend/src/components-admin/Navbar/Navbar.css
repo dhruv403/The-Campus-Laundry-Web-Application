@@ -1,13 +1,15 @@
 .nav_page {
     font-size: 25px;
     width: 100vw;
-    height: 7vw;
+    background-color: #f8f9fa;
+    height: 6vw;
 }
 .logo {
     height: 80px;
 }
 .navbar_items{
-    margin: 0px 20px;
+    /* margin: 0px 20px; */
+    color: violet;
 }
 #next_line {
     text-align: center;

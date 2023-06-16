@@ -67,6 +67,15 @@ router.post('/getOrder',fetchuser, async (req, res) => {
   }
 });
 
+router.get('/getOrderAdmindashboard', async (req, res) => {
+  try {
+    const orders = await Order.find();
+    res.json(orders);
+  } catch (error) {
+    console.log('Error fetching orders:', error);
+    res.status(500).json({ error: 'An error occurred while fetching orders.' });
+  }
+});
 
 router.post('/getOrderAdmin',fetchuser, async (req, res) => {
   try {

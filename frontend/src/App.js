@@ -26,6 +26,8 @@ import AdminDashboard from "./components-admin/AdminDashboard/AdminDashboard"
 import AdminNavbar from "./components-admin/Navbar/Navbar"
 import AdminOrderList from "./components-admin/Orders/Order"
 import Support from "./components-admin/Support/Support"
+import UserProfile from "./components/UserProfile/UserProfile"
+
 
 function App() {  
   return (
@@ -64,7 +66,11 @@ function App() {
              <AdminNavbar/>
              <AdminDashboard/>
              <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
-           </>}></Route>
+           </>}>
+          
+          </Route>
+
+          <Route exact path="/user-profile" element={<UserProfile/>}></Route>
 
           <Route exact path="/admin-orders" element={
              <>
