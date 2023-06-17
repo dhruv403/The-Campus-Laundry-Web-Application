@@ -43,7 +43,7 @@ function Navbar() {
     <>
       <nav className="navbar navbar-expand-sm navbar-light nav_page" style={{ fontSize: '25px' }}>
         <div className="container-fluid">
-          <NavLink className="navbar-brand" to="/home">
+          <NavLink className="navbar-brand" to="/admin-dashboard">
             <img className="logo" src={logo} alt="" />
           </NavLink>
 

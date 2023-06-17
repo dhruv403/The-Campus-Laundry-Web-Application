@@ -65,7 +65,7 @@ export default function AdminDashboard() {
                 <div className="option-content">Total Orders</div>
               )}
               {activeButton === 'totalOrders' && (
-                <div className="count-badge">{orders.length}</div>
+                <div className="option-content">{orders.length}</div>
               )}
             </div>
           </button>
@@ -86,7 +86,7 @@ export default function AdminDashboard() {
                 <div className="option-content">Orders Pending</div>
               )}
               {activeButton === 'ordersPending' && (
-                <div className="count-badge">
+                <div className="option-content">
                   {orders.filter(order => !order.status).length}
                 </div>
               )}
@@ -109,7 +109,7 @@ export default function AdminDashboard() {
                 <div className="option-content">Orders Completed</div>
               )}
               {activeButton === 'ordersCompleted' && (
-                <div className="count-badge">
+                <div className="option-content">
                   {orders.filter(order => order.status).length}
                 </div>
               )}
@@ -132,7 +132,7 @@ export default function AdminDashboard() {
                 <div className="option-content">Total Earnings</div>
               )}
               {activeButton === 'totalEarnings' && (
-                <div className="count-badge">
+                <div className="option-content">
                   ${orders.reduce((sum, order) => sum + order.totalPrice, 0).toFixed(2)}
                 </div>
               )}
