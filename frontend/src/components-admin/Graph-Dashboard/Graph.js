@@ -35,7 +35,7 @@ export default function Graph() {
       
       };
       return (
-        <div style={{'height':'30vh'}}>
+        <div style={{'height':'50vh','width':'30vw'}}>
           <Bar options={option} data={data} />
         </div>
       );
