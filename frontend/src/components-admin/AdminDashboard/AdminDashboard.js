@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './AdminDashboard.css';
-import Graph from '../Graph-Dashboard/Graph';
+// import Graph from '../Graph-Dashboard/Graph';
 import drying from '../../images/drying.png';
 import piechart from '../../images/pie-chart.png';
 import barchart from '../../images/chart.png';
@@ -31,18 +31,18 @@ export default function AdminDashboard() {
   const renderOrdersContent = () => {
     if (activeButton === 'totalOrders') {
       const totalOrdersCount = orders.length;
-    } 
+    }
     else if (activeButton === 'ordersPending') {
       const pendingOrdersCount = orders.filter(order => !order.status).length;
-    } 
+    }
     else if (activeButton === 'ordersCompleted') {
       const completedOrdersCount = orders.filter(order => order.status).length;
-    } 
+    }
     else if (activeButton === 'totalEarnings') {
       const totalEarnings = orders.reduce((sum, order) => sum + order.totalPrice, 0);
     }
   };
-  
+
   return (
     <div className="dashboard">
       <div className="dashboard-title">
@@ -52,9 +52,8 @@ export default function AdminDashboard() {
         <div className="option1">
           <button
             type="button"
-            className={`btn btn-secondary btn-lg option-buttons ${
-              activeButton === 'totalOrders' ? 'active' : ''
-            }`}
+            className={`btn btn-secondary btn-lg option-buttons ${activeButton === 'totalOrders' ? 'active' : ''
+              }`}
             onClick={() => handleButtonClick('totalOrders')}
           >
             <div className="button-content">
@@ -73,9 +72,8 @@ export default function AdminDashboard() {
         <div className="option2">
           <button
             type="button"
-            className={`btn btn-secondary btn-lg option-buttons ${
-              activeButton === 'ordersPending' ? 'active' : ''
-            }`}
+            className={`btn btn-secondary btn-lg option-buttons ${activeButton === 'ordersPending' ? 'active' : ''
+              }`}
             onClick={() => handleButtonClick('ordersPending')}
           >
             <div className="button-content">
@@ -96,9 +94,8 @@ export default function AdminDashboard() {
         <div className="option3">
           <button
             type="button"
-            className={`btn btn-secondary btn-lg option-buttons ${
-              activeButton === 'ordersCompleted' ? 'active' : ''
-            }`}
+            className={`btn btn-secondary btn-lg option-buttons ${activeButton === 'ordersCompleted' ? 'active' : ''
+              }`}
             onClick={() => handleButtonClick('ordersCompleted')}
           >
             <div className="button-content">
@@ -119,9 +116,8 @@ export default function AdminDashboard() {
         <div className="option4">
           <button
             type="button"
-            className={`btn btn-secondary btn-lg option-buttons ${
-              activeButton === 'totalEarnings' ? 'active' : ''
-            }`}
+            className={`btn btn-secondary btn-lg option-buttons ${activeButton === 'totalEarnings' ? 'active' : ''
+              }`}
             onClick={() => handleButtonClick('totalEarnings')}
           >
             <div className="button-content">
@@ -143,7 +139,7 @@ export default function AdminDashboard() {
       <div className="dashboard-b">
         <u>Weekly Orders</u>
       </div>
-      <div className="dashboard-c"><Graph/></div>
+      {/* <div className="dashboard-c"><Graph/></div> */}
     </div>
-  );  
+  );
 }

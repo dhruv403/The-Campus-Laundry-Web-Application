@@ -1,22 +1,26 @@
-.admin-login{
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,1000;1,1000&family=Playball&display=swap');
+
+.admin-login {
     /* border: 2px solid yellow; */
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url("../../images/admin-back.jpg");
+
 }
 
-.admin-login-sec1{
+.admin-login-sec1 {
+    padding: 20px;
     /* border: 2px solid blue; */
-    height: 40vw;
-    width: 60vw;
+    background-color: white;
     display: flex;
     flex-direction: row;
     box-shadow: 0px 0px 20px 0px #3e87c3;
+    gap: 50px;
 }
 
-.admin-sec-left{
+.admin-sec-left {
     /* border: 2px solid red; */
     flex: 1;
     background-color: whitesmoke;
@@ -24,10 +28,10 @@
     /* align-items: center; */
     justify-content: center;
     flex-direction: column;
+    gap: 80px;
 }
 
-.admin-login-logo
-{
+.admin-login-logo {
     width: 25%;
     /* border: 2px solid red; */
     flex: 1;
@@ -36,7 +40,7 @@
     justify-content: flex-start;
 }
 
-.admin-login-img{
+.admin-login-img {
     width: 100%;
     flex: 5;
     /* border: 2px solid red; */
@@ -47,13 +51,13 @@
 
 }
 
-.admin-login-img img{
+.admin-login-img img {
     margin-top: -125px;
     /* border: 2px solid red; */
 
 }
 
-.admin-sec-right{
+.admin-sec-right {
     /* border: 2px solid yellow; */
     flex: 1;
     display: flex;
@@ -63,10 +67,9 @@
     background-color: white;
 }
 
-.admin-container{
+.admin-container {
     /* border: 2px solid blue; */
-    width: 350px;
-    height: 500px;
+
 
     display: flex;
     align-items: center;
@@ -74,19 +77,20 @@
     justify-content: center;
 }
 
-.admin-container-top{
-    flex:2;
+.admin-container-top {
+    flex: 2;
     /* border: 2px solid yellow; */
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     font-size: 30px;
     font-family: 'Open Sans', sans-serif;
-    font-weight:400;
+    font-weight: 400;
 }
-.admin-container-top-1{
+
+.admin-container-top-1 {
     /* border: 2px solid yellow; */
     width: 90%;
     height: 50px;
@@ -95,9 +99,10 @@
     justify-content: center;
     font-size: 30px;
     font-family: 'Open Sans', sans-serif;
-    font-weight:400;
+    font-weight: 400;
 }
-.admin-container-top-2{
+
+.admin-container-top-2 {
     /* border: 2px solid yellow; */
     width: 90%;
     height: 50px;
@@ -106,25 +111,27 @@
     justify-content: flex-start;
     font-size: 30px;
     font-family: 'Open Sans', sans-serif;
-    font-weight:400;
+    font-weight: 400;
 }
 
-.admin-container-mid{
-    flex:4;
+.admin-container-mid {
+    flex: 4;
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: flex-start;
     /* border: 2px orangered solid; */
 }
-.logbutton{
+
+.logbutton {
     /* border: red 2px solid; */
     margin-top: 10px;
     display: flex;
     justify-content: center;
 }
-.admin-container-bottom{
-    flex:1;
+
+.admin-container-bottom {
+    flex: 1;
     /* border: 1px  black solid; */
     margin-top: 15px;
     display: flex;
@@ -132,7 +139,7 @@
     justify-content: center;
 }
 
-.admin-container-last{
+.admin-container-last {
     /* margin-top: 20px; */
     display: flex;
     justify-content: center;
@@ -142,17 +149,19 @@
     height: 40px;
     font-size: 15px;
 }
-.admin-container-last a{
+
+.admin-container-last a {
     color: black;
     margin-right: 5px;
     margin-left: 5px;
 }
-.form-label{
+
+.form-label {
     display: flex;
     justify-content: flex-start;
 }
 
-.admin-container-last-signup{
+.admin-container-last-signup {
     /* border: 2px red solid; */
     display: flex;
     justify-content: center;
@@ -162,8 +171,86 @@
     margin-top: 20px;
 }
 
-.admin-container-last-signup p{
+.admin-container-last-signup p {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.admin-login-img1 {
+    display: none;
+}
+
+@media screen and (max-width:900px) {
+    .admin-login-sec1 {
+        gap: 0;
+    }
+
+    .admin-sec-left {
+        gap: 20px;
+    }
+
+    .admin-login-sec1 {
+        flex-direction: column;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        width: 80%;
+
+        gap: 50px;
+    }
+
+    .admin-sec-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .admin-login-logo {
+        margin-top: 30px;
+    }
+
+    .admin-login-img {
+        display: none;
+    }
+
+    .admin-login-img1 {
+        display: block;
+        width: 100%;
+    }
+
+    .admin-login-img1-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 60px;
+        font-family: 'Nunito', sans-serif;
+        font-family: 'Playball', cursive;
+    }
+}
+
+@media screen and (max-width:489px) {
+    .admin-login-img1-inner {
+
+        font-size: 40px;
+
+    }
+
+
+}
+
+@media screen and (max-width:576px) {
+    .admin-container-top-2 {
+        font-size: 20px;
+    }
+
+    .admin-login-img1-inner {
+
+        font-size: 40px;
+
+    }
+
+    .admin-login-sec1 {
+        gap: 20px;
+    }
 }
