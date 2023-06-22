@@ -99,7 +99,7 @@ export default function OrderDetails(props) {
               ))}
             </div>
             {status && <h5>Order Collected Successfully!</h5>}
-            {!status && <h5>Order in Progress!</h5>}
+            {!status && <h5>Order in Progress!!!</h5>}
           </div>
         </div>
       )} 
