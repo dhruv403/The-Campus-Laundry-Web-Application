@@ -1,9 +1,10 @@
 .od-cont-admin {
-    background-color: rgb(170 217 255 / 50%);;
+    background-color: rgb(170 217 255 / 50%);
+    ;
     border-radius: 13px;
-    transition: 0.2s ;
+    transition: 0.2s;
     font-family: 'Open Sans', sans-serif;
-    font-weight:400;
+    font-weight: 400;
     color: #3e87c3;
     display: flex;
     justify-content: space-between;
@@ -15,40 +16,47 @@
     transform: scale(1.01);
     box-shadow: 0px 0px 15px -5px #3e87c3;
 }
+
 .od-sec-1-admin {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     /* border: 2px solid black; */
     height: 200px;
     width: 50%;
+    padding-left: 5%;
 }
 
-.od-sec-1-admin button{
+.od-sec-1-admin button {
     color: white;
     font-size: 20px;
     /* padding: 1rem 0rem; */
-    
+
     /* margin: 2rem 0rem 2rem 0px; */
-    width: 9rem;;
+    width: 9rem;
+    ;
     height: 3rem;
     border-radius: 13px;
     background-color: #3e87c3;
     font-family: Open Sans;
-    font-weight: 400;;
+    font-weight: 400;
+    ;
 }
-.od-sec-2-admin button{
+
+.od-sec-2-admin button {
     color: white;
     font-size: 25px;
     padding: 1rem 0rem;
-    
+
     /* margin: 2rem 0rem 2rem 0px; */
-    width: 13rem;;
+    width: 13rem;
+    ;
     border-radius: 13px;
     background-color: #3e87c3;
     font-family: Open Sans;
-    font-weight: 400;;
+    font-weight: 400;
+    ;
 }
 
 .od-sec-1-p1-admin {
@@ -57,12 +65,14 @@
     display: flex;
     align-items: center;
 }
+
 .od-sec-1-p2-admin {
     /* border: 2px solid red; */
     flex: 1;
     display: flex;
     align-items: center;
 }
+
 .od-sec-1-p3-admin {
     /* border: 2px solid red; */
     flex: 1;
@@ -72,16 +82,18 @@
     align-items: center;
 }
 
-.od-sec-1-p3-x1-admin{
+.od-sec-1-p3-x1-admin {
     display: flex;
-    flex:1;
+    flex: 1;
     margin-right: 1rem;
 }
-.od-sec-1-p3-x2-admin{
+
+.od-sec-1-p3-x2-admin {
     display: flex;
-    flex:1;
+    flex: 1;
     margin-left: 1rem;
 }
+
 .od-sec-2-admin {
     display: flex;
     flex-direction: column;
@@ -92,14 +104,17 @@
 }
 
 .od-sec-2-p1-admin {
-    flex:1;
+    flex: 1;
     display: flex;
-    align-items: center;;
+    align-items: center;
+    ;
 }
+
 .od-sec-2-p2-admin {
-    flex:1;
+    flex: 1;
     display: flex;
-    align-items: center;;
+    align-items: center;
+    ;
 }
 
 .popup-bag-admin {
@@ -108,17 +123,17 @@
     right: 0;
     bottom: 0;
     position: fixed;
-    animation: popup-fade-in 0.3s ease-in-out; 
+    animation: popup-fade-in 0.3s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
     animation: popup-fade-in 0.3s ease-in-out;
-  }
-  
-  
-  .popup-bag-content-admin {
+}
+
+
+.popup-bag-content-admin {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -128,25 +143,65 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     color: #3e87c3;
-    position: relative; 
-  }
+    position: relative;
+}
 
-  .bag-close-btn-admin {
+.bag-close-btn-admin {
     position: absolute;
     top: 10px;
     right: 10px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-  }
+}
 
-  
-  .popup-bag-content-admin .success-icon {
+
+.popup-bag-content-admin .success-icon {
     animation: rotate-in 0.5s;
     margin-bottom: 20px;
-  }
-  
-  .od-sec-2-amount-admin {
+}
+
+.od-sec-2-amount-admin {
     font-style: italic;
     color: black;
-  }
+}
+
+@media screen and (max-width:795px) {
+
+
+
+
+    .od-sec-2-p2-admin {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .od-sec-2-p2-admin button {
+        width: 200px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width:795px) {
+    .od-cont-admin {
+        padding: 30px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .od-sec-1-admin {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .od-sec-2-admin {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 5px;
+    }
+}

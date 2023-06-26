@@ -29,77 +29,90 @@ import Support from "./components-admin/Support/Support"
 import UserProfile from "./components/UserProfile/UserProfile"
 
 
-function App() {  
+function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={[ <ScrollToTop/>,<Login/>]}></Route>
-          <Route exact path="/signup" element={[ <ScrollToTop/>,<SignUp/>]}></Route>
-          <Route exact path="/home" element={[ <ScrollToTop/>,<Navbar/>,<Home/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
-          <Route exact path="/services" element={[ <ScrollToTop/>,<Navbar/>,<Services/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
-          <Route exact path="/whychooseus" element={[ <ScrollToTop/>,<Navbar/>,<WhyChooseUs/>,<ReviewsAndRatings/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
-          <Route exact path="/hello" element={[ <ScrollToTop/>,<Navbar/>,<ReviewsAndRatings/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
+          <Route exact path="/" element={[<ScrollToTop />, <Login />]}></Route>
+          <Route exact path="/signup" element={[<ScrollToTop />, <SignUp />]}></Route>
+          <Route exact path="/home" element={[<ScrollToTop />,
+          <Navbar />,
+          <Home />, <Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
+          <Route exact path="/services" element={[<ScrollToTop />,
+          <Navbar />,
+          <Services />, <Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
+          <Route exact path="/whychooseus" element={[<ScrollToTop />,
+          <Navbar />
+            , <WhyChooseUs />, <ReviewsAndRatings />, <Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
+          <Route exact path="/hello" element={[<ScrollToTop />, <Navbar />, <ReviewsAndRatings />, <Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
 
           {/* <Route exact path="/checkout" element={[ <ScrollToTop/>,<Navbar/>,<Checkout/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route> */}
           <Route exact path="/checkout" element={
-             <>
-             <ScrollToTop />
-             <Navbar />
-             <Checkout grandTotal = {0}/>
-             <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
-           </>
+            <>
+              <ScrollToTop />
+              <Navbar />
+              <Checkout grandTotal={0} />
+              <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
+            </>
 
-            }></Route>
+          }></Route>
 
-          <Route exact path="/dashboard" element={[ <ScrollToTop/>,<Navbar/>,<Dashboard/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
-          <Route exact path="/order" element={[ <ScrollToTop/>,<Navbar/>,<Order/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
-          <Route exact path="/contactus" element={[ <ScrollToTop/>,<Navbar/>,<Contact/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
-          <Route exact path="/success" element={[ <ScrollToTop/>,<Navbar/>,<Success/>,<Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
-          
+          <Route exact path="/dashboard" element={[<ScrollToTop />,
+          <Navbar />,
+          <Dashboard />, <Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
+          <Route exact path="/order" element={[<ScrollToTop />,
+          <Navbar />,
+          <Order />, <Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
+          <Route exact path="/contactus" element={[<ScrollToTop />,
+          <Navbar />
+            ,
+          <Contact />, <Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
+          <Route exact path="/success" element={[<ScrollToTop />, <Navbar />, <Success />, <Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
+
           {/* Admin Routes */}
-          <Route exact path="/admin-login" element={<AdminLogin/>}></Route>
-         
+          <Route exact path="/admin-login" element={<AdminLogin />}></Route>
+
           <Route exact path="/admin-dashboard" element={
-             <>
-             <ScrollToTop />
-             <AdminNavbar/>
-             <AdminDashboard/>
-             <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
-           </>}>
-          
+            <>
+              <ScrollToTop />
+              <AdminNavbar />
+              <AdminDashboard />
+              <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
+            </>}>
+
           </Route>
 
-          <Route exact path="/user-profile" element={<UserProfile/>}></Route>
+          <Route exact path="/user-profile" element={<UserProfile />}></Route>
 
           <Route exact path="/admin-orders" element={
-             <>
-             <ScrollToTop />
-             <AdminNavbar/>
-             <AdminOrderList/>
-             <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
-           </>}></Route>
+            <>
+              <ScrollToTop />
+              <AdminNavbar />
+              <AdminOrderList />
+              <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
+            </>}></Route>
 
           <Route exact path="/customer-support" element={
-             <>
-             <ScrollToTop />
-             <AdminNavbar/>
-             <Support/>
-             <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
-           </>}></Route>
-          
+            <>
+              <ScrollToTop />
+              <AdminNavbar />
+              <Support />
+              <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
+            </>}></Route>
+
         </Routes>
       </BrowserRouter>
 
-     {/* <HelloWorld/> */}
-     {/* <Home/> */}
-     {/* <Services/> */}
-     {/* <WhyChooseUs/> */}
-     {/* <ReviewsAndRatings/> */}
-     {/* <Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} /> */}
-     {/* <Checkout/> */}
-     {/* <Bag/> */}
-     {/* <Order/> */}
+      {/* <HelloWorld/> */}
+      {/* <Home/> */}
+      {/* <Services/> */}
+      {/* <WhyChooseUs/> */}
+      {/* <ReviewsAndRatings/> */}
+      {/* <Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} /> */}
+      {/* <Checkout/> */}
+      {/* <Bag/> */}
+      {/* <Order/> */}
 
     </>
   );

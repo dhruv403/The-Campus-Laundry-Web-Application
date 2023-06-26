@@ -57,11 +57,9 @@ export default function AdminLogin() {
           <div className="admin-container">
             <div className="admin-container-top">
               <div className="admin-container-top-1">
-                <b><u>Admin</u></b>
+                <b><u>Admin SignIn</u></b>
               </div>
-              <div className="admin-container-top-2">
-                <b><u>Sign In</u></b>
-              </div>
+              <br></br>
             </div>
             <div className="admin-container-mid">
               <form onSubmit={handleSubmit}>
@@ -75,7 +73,7 @@ export default function AdminLogin() {
                   <input type="password" className="form-control" value={credentials.password} onChange={onChange} name="password" id="password" />
                 </div>
                 <div className="logbutton">
-                  <button type="submit" className="btn btn-primary">Login</button>
+                  <button type="submit" className="btn btncolor">Login</button>
                 </div>
               </form>
             </div>

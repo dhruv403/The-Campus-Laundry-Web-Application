@@ -49,91 +49,96 @@ export default function AdminDashboard() {
         <h1 className="dashboard-heading">Admin Dashboard</h1>
       </div>
       <div className="dashboard-a">
-        <div className="option1">
-          <button
-            type="button"
-            className={`btn btn-secondary btn-lg option-buttons ${activeButton === 'totalOrders' ? 'active' : ''
-              }`}
-            onClick={() => handleButtonClick('totalOrders')}
-          >
-            <div className="button-content">
-              <div className="tag">
-                <img src={drying} id="imagess" alt="Total Orders" />
-              </div>
-              {activeButton !== 'totalOrders' && (
-                <div className="option-content">Total Orders</div>
-              )}
-              {activeButton === 'totalOrders' && (
-                <div className="option-content">{orders.length}</div>
-              )}
-            </div>
-          </button>
-        </div>
-        <div className="option2">
-          <button
-            type="button"
-            className={`btn btn-secondary btn-lg option-buttons ${activeButton === 'ordersPending' ? 'active' : ''
-              }`}
-            onClick={() => handleButtonClick('ordersPending')}
-          >
-            <div className="button-content">
-              <div className="tag">
-                <img src={piechart} id="imagess" alt="Orders Pending" />
-              </div>
-              {activeButton !== 'ordersPending' && (
-                <div className="option-content">Orders Pending</div>
-              )}
-              {activeButton === 'ordersPending' && (
-                <div className="option-content">
-                  {orders.filter(order => !order.status).length}
+        <div className="dashboard-a-first">
+          <div className="option1">
+            <button
+              type="button"
+              className={`btn btn-secondary btn-lg option-buttons ${activeButton === 'totalOrders' ? 'active' : ''
+                }`}
+              onClick={() => handleButtonClick('totalOrders')}
+            >
+              <div className="button-content">
+                <div className="tag">
+                  <img src={drying} id="imagess" alt="Total Orders" />
                 </div>
-              )}
-            </div>
-          </button>
-        </div>
-        <div className="option3">
-          <button
-            type="button"
-            className={`btn btn-secondary btn-lg option-buttons ${activeButton === 'ordersCompleted' ? 'active' : ''
-              }`}
-            onClick={() => handleButtonClick('ordersCompleted')}
-          >
-            <div className="button-content">
-              <div className="tag">
-                <img src={barchart} id="imagess" alt="Orders Completed" />
+                {activeButton !== 'totalOrders' && (
+                  <div className="option-content">Total Orders</div>
+                )}
+                {activeButton === 'totalOrders' && (
+                  <div className="option-content">{orders.length}</div>
+                )}
               </div>
-              {activeButton !== 'ordersCompleted' && (
-                <div className="option-content">Orders Completed</div>
-              )}
-              {activeButton === 'ordersCompleted' && (
-                <div className="option-content">
-                  {orders.filter(order => order.status).length}
+            </button>
+          </div>
+          <div className="option2">
+            <button
+              type="button"
+              className={`btn btn-secondary btn-lg option-buttons ${activeButton === 'ordersPending' ? 'active' : ''
+                }`}
+              onClick={() => handleButtonClick('ordersPending')}
+            >
+              <div className="button-content">
+                <div className="tag">
+                  <img src={piechart} id="imagess" alt="Orders Pending" />
                 </div>
-              )}
-            </div>
-          </button>
-        </div>
-        <div className="option4">
-          <button
-            type="button"
-            className={`btn btn-secondary btn-lg option-buttons ${activeButton === 'totalEarnings' ? 'active' : ''
-              }`}
-            onClick={() => handleButtonClick('totalEarnings')}
-          >
-            <div className="button-content">
-              <div className="tag">
-                <img src={coins} id="imagess" alt="Total Earnings" />
+                {activeButton !== 'ordersPending' && (
+                  <div className="option-content">Orders Pending</div>
+                )}
+                {activeButton === 'ordersPending' && (
+                  <div className="option-content">
+                    {orders.filter(order => !order.status).length}
+                  </div>
+                )}
               </div>
-              {activeButton !== 'totalEarnings' && (
-                <div className="option-content">Total Earnings</div>
-              )}
-              {activeButton === 'totalEarnings' && (
-                <div className="option-content">
-                  ${orders.reduce((sum, order) => sum + order.totalPrice, 0).toFixed(2)}
+            </button>
+          </div>
+        </div>
+        <div className="dashboard-a-first">
+
+          <div className="option3">
+            <button
+              type="button"
+              className={`btn btn-secondary btn-lg option-buttons ${activeButton === 'ordersCompleted' ? 'active' : ''
+                }`}
+              onClick={() => handleButtonClick('ordersCompleted')}
+            >
+              <div className="button-content">
+                <div className="tag">
+                  <img src={barchart} id="imagess" alt="Orders Completed" />
                 </div>
-              )}
-            </div>
-          </button>
+                {activeButton !== 'ordersCompleted' && (
+                  <div className="option-content">Orders Completed</div>
+                )}
+                {activeButton === 'ordersCompleted' && (
+                  <div className="option-content">
+                    {orders.filter(order => order.status).length}
+                  </div>
+                )}
+              </div>
+            </button>
+          </div>
+          <div className="option4">
+            <button
+              type="button"
+              className={`btn btn-secondary btn-lg option-buttons ${activeButton === 'totalEarnings' ? 'active' : ''
+                }`}
+              onClick={() => handleButtonClick('totalEarnings')}
+            >
+              <div className="button-content">
+                <div className="tag">
+                  <img src={coins} id="imagess" alt="Total Earnings" />
+                </div>
+                {activeButton !== 'totalEarnings' && (
+                  <div className="option-content">Total Earnings</div>
+                )}
+                {activeButton === 'totalEarnings' && (
+                  <div className="option-content">
+                    ${orders.reduce((sum, order) => sum + order.totalPrice, 0).toFixed(2)}
+                  </div>
+                )}
+              </div>
+            </button>
+          </div>
         </div>
       </div>
       <div className="dashboard-b">

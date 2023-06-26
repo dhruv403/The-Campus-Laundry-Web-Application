@@ -74,14 +74,15 @@ export default function Login() {
                   <input type="password" className="form-control" value={credentials.password} onChange={onChange} name="password" id="password" />
                 </div>
                 <div className="logbutton">
-                  <button type="submit" className="btn btn-primary">Login</button>
+                  <button type="submit" className="btn  loginbutton">Login</button>
+                  <div className="container-bottom">
+                    <img src={GoogleLogo} height={'20px'} alt="" />
+                    Continue with Google
+                  </div>
                 </div>
               </form>
             </div>
-            <div className="container-bottom">
-              <img src={GoogleLogo} height={'20px'} alt="" />
-              Continue with Google
-            </div>
+
             <div className="container-bottom-1">
               <button type="button" class="btn btn-secondary" onClick={handleAdminLogin}>Admin Login</button>
             </div>

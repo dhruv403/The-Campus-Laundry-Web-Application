@@ -77,8 +77,9 @@
     width: 90%;
     height: 50px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
+    margin-bottom: 20px;
     font-size: 30px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -97,16 +98,30 @@
     /* border: red 2px solid; */
     display: flex;
     justify-content: center;
+    width: 100%;
+    gap: 10%;
 }
 
 .container-bottom {
     border: 1px black solid;
-    height: 100vh;
-    width: 80%;
-    margin-top: 15px;
+    border-radius: 3px;
+    width: 65%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.loginbutton {
+    background-color: rgb(41, 93, 207);
+    color: white;
+    width: 25%;
+}
+
+.loginbutton:hover {
+    background-color: rgb(41, 93, 207);
+    color: white;
+    width: 25%;
 }
 
 .container-bottom-1 {
@@ -161,6 +176,12 @@
 }
 
 @media screen and (max-width:900px) {
+    .container-bottom {
+        width: 65%;
+    }
+
+
+
     .login-logo {
         margin-top: 30px;
     }
@@ -197,6 +218,7 @@
         font-family: 'Nunito', sans-serif;
         font-family: 'Playball', cursive;
     }
+
 }
 
 @media screen and (max-width:489px) {
@@ -209,8 +231,10 @@
 
 @media screen and (max-width:435px) {
     .login-img1-inner {
-
         font-size: 40px;
+    }
 
+    .container-bottom {
+        font-size: 13px;
     }
 }

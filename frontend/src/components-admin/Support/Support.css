@@ -4,29 +4,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
 }
 
-
-
-  .dash-head-admin-support h1 {
-    font-weight: 500;
+.dash-head-admin-support {
     font-size: 50px;
+    font-weight: 400;
+    color: #3e87c3;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    left: 50%;
     display: flex;
     justify-content: center;
-    position: relative; /* add relative positioning to the parent element */
+    align-items: center;
 }
 
-.hello-dash-admin-support::after {
-    content: '';
-    height: 4px;
-    width: 11%;
-    background: #3e87c3;
-    position: absolute;
-    left: 50.4%; /* set the left position to 50% */
-    transform: translateX(-50%); /* use transform to center the underline */
-    bottom: -5px; /* set the bottom position to adjust the spacing between text and underline */
+
+.inner {
+    font-size: 50px;
+    border-bottom: 5px solid #3e87c3;
 }
+
 
 
 .dash-order-1-admin-support {

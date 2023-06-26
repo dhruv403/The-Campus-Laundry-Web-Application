@@ -1,54 +1,63 @@
-*{
+* {
     font-family: 'Open Sans', sans-serif;
-    font-weight:400;
+    font-weight: 400;
 }
-.contact-sec{
+
+.contact-sec {
     display: flex;
     flex-direction: column;
     height: auto;
     /* border: 2px solid black; */
 }
 
-.contact-sec1{
-    color:#3e87c3;
+.contact-sec1 {
+    color: #3e87c3;
     margin-left: 40px;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
     /* border: 2px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.contact-sec1 h1{
+
+.contact-sec1 h1 {
     position: relative;
 }
-.contact-sec1::after {
-    content: '';
-    height: 4px;
-    width: 9%;
-    background: #3e87c3;
-    position: absolute;
-    left: 35%; /* set the left position to 50% */
-    transform: translateX(-50%); /* use transform to center the underline */
-    top: 220px /* set the bottom position to adjust the spacing between text and underline */
-}
-.contact-sec2{
+
+.contact-sec2 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin-top: 25px;
+    gap: 5%;
     /* border: 4px solid yellow; */
 }
 
+.contact-sec1-heading {
+    border-bottom: 5px solid #3e87c3;
+
+}
+
+.contact-sec1-rocket {
+    font-size: 40px;
+    margin-left: 10px;
+}
 
 
 /*Left Part*/
 
-.contact-sec2-1{
-    width: 50%;
-    color:crimson;
+.contact-sec2-1 {
+    padding-left: 100px;
+    padding-right: 100px;
+    width: 60%;
+    color: crimson;
     /* border: 2px solid black; */
-    
+
 }
-.contact-btn button{
+
+.contact-btn button {
     background-color: #3e87c3;
     color: white;
     width: 100px;
@@ -56,40 +65,47 @@
     border-radius: 10px;
 
 }
-.contact-btn button:hover{
+
+.contact-btn button:hover {
     background-color: #3e87c3;
     box-shadow: 0px 0px 15px -5px red;
 }
 
 .contact-btn {
     display: flex;
-    align-items: center;justify-content: center;
-    margin:20px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
 }
 
 /*Right Part*/
-.contact-sec2-2{
-    color: black;   
-    margin-left: -300px;
-    margin-top: 50px;;
+.contact-sec2-2 {
+    color: black;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.contact-card1{
+.contact-card1 {
     box-shadow: 0px 0px 15px -5px #3e87c3;
     width: 400px;
     height: 500px;
-    background-color:lightblue;
+    background-color: lightblue;
     border-radius: 20px;
     position: relative;
 }
-.contact-card-title{
+
+.contact-card-title {
     font-size: 30px;
-    color:crimson;
+    color: crimson;
 }
-.contact-card-title p{
+
+.contact-card-title p {
     margin-left: 125px;
 }
-.contact-card-body{
+
+.contact-card-body {
     position: absolute;
     top: 15%;
     display: flex;
@@ -97,30 +113,86 @@
     flex-direction: column;
     align-items: flex-start;
 }
-.contact-card-text{
+
+.contact-card-text {
     display: flex;
-    
+
 }
-.contact-mail
-{
-    display: flex;
-}
-.contact-contact
-{
+
+.contact-mail {
     display: flex;
 }
-.contact-follow
-{
+
+.contact-contact {
     display: flex;
 }
-.contact-text{
+
+.contact-follow {
+    display: flex;
+}
+
+.contact-text {
     margin-left: 23px;
 }
-.contact-iconn{
-    margin-left: 10px;
+
+.contact-textt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.contact-iconn {
+    display: flex;
+    gap: 9px;
+    margin-left: 20px;
+}
 
-#exampleFormControlTextarea1{
+.contact-iconn i {
+    font-size: 20px;
+}
+
+#exampleFormControlTextarea1 {
     height: 250px;
+}
+
+@media screen and (max-width:1220px) {
+    .contact-sec2 {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-sec2-2 {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 50px;
+    }
+
+    .contact-sec2-1 {
+        width: 100%;
+        padding: 50px;
+        margin: 0;
+
+    }
+
+    .contact-sec1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width:448px) {
+    .contact-sec2-2 {
+
+        width: 90%;
+        margin: 0;
+        margin-bottom: 50px;
+    }
 }

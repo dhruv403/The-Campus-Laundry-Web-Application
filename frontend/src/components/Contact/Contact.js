@@ -1,14 +1,18 @@
-import  MailIcon from "../../images/mailicon.png";
-import  PhoneIcon from "../../images/smartphone.png";
-import  YouTubeIcon from "../../images/youtube.png";
-import  LinkedInIcon from "../../images/linkedin.png";
+import MailIcon from "../../images/mailicon.png";
+import PhoneIcon from "../../images/smartphone.png";
+import YouTubeIcon from "../../images/youtube.png";
+import LinkedInIcon from "../../images/linkedin.png";
 import InstagramIcon from "../../images/instagram.png";
-import  FacebookIcon from "../../images/facebook.png";
-import  LocationOnIcon from "../../images/location.png";
+import FacebookIcon from "../../images/facebook.png";
+import LocationOnIcon from "../../images/location.png";
+import { BsInstagram } from "react-icons/bs";
+import { BsFacebook } from "react-icons/bs";
+import { BsYoutube } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
 // import  TelegramIcon from "../../images/telegram.png";
 
 import "./Contact.css";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from 'axios'
 
 export default function Contact() {
@@ -20,29 +24,47 @@ export default function Contact() {
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
       const obj = {
         name: data.fullname,
-        email : data.email,
+        email: data.email,
         contactNo: data.mobile,
         message: data.message
       }
       const token = localStorage.getItem('token');
-        const user = JSON.parse(localStorage.getItem('currentUser'));
-        const config = {
-          headers: {
-            'auth-token' :token,
-            'email': user.userEmail
-          }
-        };
+      const user = JSON.parse(localStorage.getItem('currentUser'));
+      const config = {
+        headers: {
+          'auth-token': token,
+          'email': user.userEmail
+        }
+      };
 
       const response = await axios.post('http://localhost:5000/api/contact/sendMessage', obj, config);
       console.log(response.data);
+      alert("Your response has been recorded");
     } catch (error) {
       console.log(error);
+      if (error.response) {
+        // The request was made, but the server responded with an error status code
+        const statusCode = error.response.status;
+        if (statusCode === 400) {
+          alert('Bad Request: Invalid input data');
+        } else if (statusCode === 500) {
+          alert('Internal Server Error: Something went wrong on the server');
+        } else {
+          alert(`Error: ${statusCode}`);
+        }
+      } else if (error.request) {
+        // The request was made, but no response was received
+        alert('No response received from the server');
+      } else {
+        // Something happened in setting up the request that triggered an error
+        alert('Error occurred while sending the request');
+      }
+
     }
-    alert("Your response has been recorded");
     setData({
       fullname: "",
       email: "",
@@ -54,20 +76,20 @@ export default function Contact() {
     const name = e.target.name;
     const value = e.target.value;
     console.log(name, value)
-    setData({...data, [name]:value});
+    setData({ ...data, [name]: value });
     console.log(data)
   }
   return (
-  
+
     <>
       <div className="contact-sec">
-        
+
 
         <div className="contact-sec2">
-          
+
           <div className="contact-sec2-1">
             <div className="contact-sec1">
-              <h1>Contact Us 🚀</h1>
+              <h1 className="contact-sec1-heading">Contact Us </h1><span className="contact-sec1-rocket">🚀</span>
             </div>
             <form onSubmit={handleSubmit}>
               <div className="contact-container">
@@ -135,7 +157,7 @@ export default function Contact() {
                   ></textarea>
                 </div>
                 <div className="contact-btn">
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" className="btn ">
                     Submit
                   </button>
                 </div>
@@ -154,7 +176,7 @@ export default function Contact() {
                 </div>
                 <div className="contact-card-text mx-3">
                   <div className="contact-icon">
-                  <img height="25px" className="mx-0" src={LocationOnIcon} alt="" />
+                    <img height="25px" className="mx-0" src={LocationOnIcon} alt="" />
                     {/* <LocationOnIcon />{" "} */}
                   </div>
                   <div className="contact-text">
@@ -165,7 +187,7 @@ export default function Contact() {
                 <br />
                 <div className="contact-mail mx-3">
                   <div className="contact-icon">
-                  <img height="25px" className="" src={MailIcon} alt="" />
+                    <img height="25px" className="" src={MailIcon} alt="" />
                     {/* <MailIcon />{" "} */}
                   </div>
                   <div className="contact-text">campuslaundry@gmail.com</div>
@@ -173,7 +195,7 @@ export default function Contact() {
                 <br />
                 <div className="contact-contact mx-3">
                   <div className="contact-icon">
-                  <img height="25px" className="" src={PhoneIcon} alt="" />
+                    <img height="25px" className="" src={PhoneIcon} alt="" />
                     {/* <PhoneIcon />{" "} */}
                   </div>
                   <div className="contact-text">+91 834-9034-310</div>
@@ -182,10 +204,11 @@ export default function Contact() {
                 <div className="contact-follow mx-4">
                   <div className="contact-textt">Follow Us On: </div>
                   <div className="contact-iconn">
-                    <img height="25px" className="mx-1" src={InstagramIcon} alt="" />
-                    <img height="25px" className="mx-1" src={YouTubeIcon} alt="" />
-                    <img height="25px" className="mx-1" src={FacebookIcon} alt="" />
-                    <img height="25px" className="mx-1" src={LinkedInIcon} alt="" />
+                    <i><BsInstagram /></i>
+                    <i><BsFacebook /></i>
+                    <i><BsLinkedin /></i>
+                    <i><BsYoutube /></i>
+
                     {/* <InstagramIcon />
                     <YouTubeIcon />
                     <FacebookIcon />

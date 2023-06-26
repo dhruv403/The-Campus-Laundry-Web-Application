@@ -229,6 +229,18 @@
     }
 }
 
+.btncolor {
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+    background-color: rgb(41, 93, 207);
+}
+
+.btncolor:hover {
+    background-color: rgb(28, 88, 218);
+    color: white;
+}
+
 @media screen and (max-width:489px) {
     .admin-login-img1-inner {
 
