@@ -7,7 +7,7 @@ const { body, validationResult } = require('express-validator');
 //for password hasing -> Protection
 const bcrypt = require('bcryptjs');
 
-const JWT_SECRET = 'Atul'
+const JWT_SECRET = process.env.JWT_SECRET
 var jwt = require('jsonwebtoken');
 
 const fetchuser = require('../middleware/fetchuser')
