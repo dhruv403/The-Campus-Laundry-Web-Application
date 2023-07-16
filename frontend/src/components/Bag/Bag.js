@@ -62,7 +62,8 @@ export default function Bag(props) {
       }
 
       try {
-        const response = await axios.post('http://localhost:5000/api/order/orders', orderSummary);
+        const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+        const response = await axios.post(`${REACT_APP_BASE_URL}/api/order/orders`, orderSummary);
         // console.log(response.data);
         show();
       } catch (error) {

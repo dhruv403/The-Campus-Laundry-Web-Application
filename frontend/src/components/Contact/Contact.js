@@ -40,8 +40,8 @@ export default function Contact() {
           'email': user.userEmail
         }
       };
-
-      const response = await axios.post('http://localhost:5000/api/contact/sendMessage', obj, config);
+      const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+      const response = await axios.post(`${REACT_APP_BASE_URL}/api/contact/sendMessage`, obj, config);
       console.log(response.data);
       alert("Your response has been recorded");
     } catch (error) {

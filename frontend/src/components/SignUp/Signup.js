@@ -23,8 +23,9 @@ export default function Signup() {
             alert("Password do not Match");
             return;
         }
+        const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
 
-        let response = await fetch("http://localhost:5000/api/auth/createuser", {
+        let response = await fetch(`${REACT_APP_BASE_URL}/api/auth/createuser`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

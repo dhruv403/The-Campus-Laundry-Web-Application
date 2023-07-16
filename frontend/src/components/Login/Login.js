@@ -6,11 +6,12 @@ import finalLogo from '../../images/login_logo.png'
 import GoogleLogo from '../../images/google.png';
 
 export default function Login() {
+  const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
   const [credentials, setCredentials] = useState({ email: '', password: '' })
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let response = await fetch("http://localhost:5000/api/auth/login", {
+    let response = await fetch(`${REACT_APP_BASE_URL}/api/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

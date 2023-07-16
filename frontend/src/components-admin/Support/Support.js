@@ -8,7 +8,8 @@ export default function Support() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/contact/getMessage');
+        const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+        const response = await axios.get(`${REACT_APP_BASE_URL}/api/contact/getMessage`);
         console.log(response.data);
         setMessages(response.data);
       } catch (error) {

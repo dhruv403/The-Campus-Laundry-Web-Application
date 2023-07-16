@@ -11,7 +11,8 @@ export default function AdminLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let response = await fetch("http://localhost:5000/api/auth/adminlogin", {
+    const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
+    let response = await fetch(`${REACT_APP_BASE_URL}/api/auth/adminlogin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

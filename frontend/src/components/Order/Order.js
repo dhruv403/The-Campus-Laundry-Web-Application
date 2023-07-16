@@ -20,7 +20,8 @@ export default function Order(props) {
 
         const fetchItems = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/auth/items');
+                const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+                const response = await axios.get(`${REACT_APP_BASE_URL} /api/auth/items`);
                 setItems(response.data);
                 const prices = {};
                 const quantities = {};

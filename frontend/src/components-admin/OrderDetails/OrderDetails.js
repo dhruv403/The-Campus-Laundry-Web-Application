@@ -48,7 +48,8 @@ export default function OrderDetails(props) {
       };
       // console.log(data);
 
-      const response = await axios.put('http://localhost:5000/api/order/changeStatus', data, config);
+      const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+      const response = await axios.put(`${REACT_APP_BASE_URL}/api/order/changeStatus`, data, config);
       // console.log(response.data.status);
       setStatus(response.data.status);
       if (response.data.status) {

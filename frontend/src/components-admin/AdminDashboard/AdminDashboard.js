@@ -17,7 +17,8 @@ export default function AdminDashboard() {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/order/getOrderAdmindashboard');
+      const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+      const response = await axios.get(`${REACT_APP_BASE_URL}/api/order/getOrderAdmindashboard`);
       setOrders(response.data);
     } catch (error) {
       console.log('Error fetching orders:', error);
