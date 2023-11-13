@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
-import basket from '../../images/basket_navbar.gif'
+// import basket from '../../images/basket_navbar.gif'
+import basket from '../../images/shopping-basket.png'
 import logo from '../../images/Logo.png'
 import './Navbar.css'
 import { NavLink, useNavigate } from 'react-router-dom'

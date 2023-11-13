@@ -1,31 +1,47 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useLocation } from 'react-router-dom'
 import './Checkout.css'
 import cash from '../../images/cash.png'
 import user from '../../images/user.png'
 import pin from '../../images/pin.png'
 import Bag from '../Bag/Bag'
-
+import axios from 'axios';
 
 export default function Checkout(props) {
 const location = useLocation();
 // console.log(location.state.serviceNo);
-
-const [name, setName] = useState("");
-const [email, setEmail] = useState("")
+const [curruser, setCurruser] = useState({name: '', email: ''});
 const [contactNo, setContactNo] = useState("");
 const [hostel, setHostel] = useState("");
 const [roomNo, setRoomNo] = useState("");
 const [paymentMethod, setPaymentMethod] = useState("");
-// const [orderData, setOrderData] = useState({});
 
-const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
+useEffect(() => {
+    const fetchUser = async () => {
+        try {
+            const token = localStorage.getItem('token');
+            const user = JSON.parse(localStorage.getItem('currentUser'));
+            const config = {
+                headers: {
+                    'auth-token': token,
+                    'email': user.userEmail
+                }
+            };
+            const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+            const response = await axios.post(`${REACT_APP_BASE_URL}/api/auth/getuser`, {}, config);
+            console.log(response.data);
+            setCurruser(response.data);
+            console.log(curruser);
+          } catch (error) {
+            console.error(error);
+          }
+    }
+    fetchUser();
+    // eslint-disable-next-line
+}, []);
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+
+
 
   const handleContactNoChange = (e) => {
     setContactNo(e.target.value);
@@ -55,10 +71,10 @@ const handleNameChange = (e) => {
                 <form>
                     <div className="temp">
                         <div className="temp1">
-                        <input type="text" placeholder={"Name"} value={name} onChange={handleNameChange}/>
+                        <input type="text" placeholder={"Name"} value={curruser.name} />
                         </div>
                         <div className="temp1">
-                        <input type="text" placeholder={"Email ID"}  value={email} onChange={handleEmailChange}/>
+                        <input type="text" placeholder={"Email ID"}  value={curruser.email} />
                         </div>
                         <div className="temp1">
                         <input type="text" placeholder={"Contact No."} value={contactNo } onChange={handleContactNoChange}/>
@@ -137,8 +153,8 @@ const handleNameChange = (e) => {
                 <Bag 
                 subTotal = {location.state.grandTotal} 
                 totalQuantity = {location.state.totalQuantity}
-                name = {name}
-                email = {email}
+                name = {curruser.name}
+                email = {curruser.email}
                 contactNo = {contactNo}
                 paymentMethod = {paymentMethod}
                 hostel = {hostel}

@@ -1,9 +1,9 @@
 import MailIcon from "../../images/mailicon.png";
 import PhoneIcon from "../../images/smartphone.png";
-import YouTubeIcon from "../../images/youtube.png";
-import LinkedInIcon from "../../images/linkedin.png";
-import InstagramIcon from "../../images/instagram.png";
-import FacebookIcon from "../../images/facebook.png";
+// import YouTubeIcon from "../../images/youtube.png";
+// import LinkedInIcon from "../../images/linkedin.png";
+// import InstagramIcon from "../../images/instagram.png";
+// import FacebookIcon from "../../images/facebook.png";
 import LocationOnIcon from "../../images/location.png";
 import { BsInstagram } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";

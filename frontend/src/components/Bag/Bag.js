@@ -25,7 +25,8 @@ export default function Bag(props) {
     function hide() {
       setShowPopup(false);
     }
-  
+
+  // eslint-disable-next-line no-unused-vars
     const [redirect, setRedirect] = useState(false);
   
     const handleRedirect = () => {
@@ -63,6 +64,7 @@ export default function Bag(props) {
 
       try {
         const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+          // eslint-disable-next-line no-unused-vars
         const response = await axios.post(`${REACT_APP_BASE_URL}/api/order/orders`, orderSummary);
         // console.log(response.data);
         show();

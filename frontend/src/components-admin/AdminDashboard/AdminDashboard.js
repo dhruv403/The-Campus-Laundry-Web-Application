@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+
 import React, { useState, useEffect } from 'react';
 import './AdminDashboard.css';
 // import Graph from '../Graph-Dashboard/Graph';
@@ -29,20 +31,21 @@ export default function AdminDashboard() {
     setActiveButton(buttonName);
   };
 
-  const renderOrdersContent = () => {
-    if (activeButton === 'totalOrders') {
-      const totalOrdersCount = orders.length;
-    }
-    else if (activeButton === 'ordersPending') {
-      const pendingOrdersCount = orders.filter(order => !order.status).length;
-    }
-    else if (activeButton === 'ordersCompleted') {
-      const completedOrdersCount = orders.filter(order => order.status).length;
-    }
-    else if (activeButton === 'totalEarnings') {
-      const totalEarnings = orders.reduce((sum, order) => sum + order.totalPrice, 0);
-    }
-  };
+  // eslint-disable-next-line no-unused-vars
+  // const renderOrdersContent = () => {
+  //   if (activeButton === 'totalOrders') {
+  //     const totalOrdersCount = orders.length;
+  //   }
+  //   else if (activeButton === 'ordersPending') {
+  //     const pendingOrdersCount = orders.filter(order => !order.status).length;
+  //   }
+  //   else if (activeButton === 'ordersCompleted') {
+  //     const completedOrdersCount = orders.filter(order => order.status).length;
+  //   }
+  //   else if (activeButton === 'totalEarnings') {
+  //     const totalEarnings = orders.reduce((sum, order) => sum + order.totalPrice, 0);
+  //   }
+  // };
 
   return (
     <div className="dashboard">

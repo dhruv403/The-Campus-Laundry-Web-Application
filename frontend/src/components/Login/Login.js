@@ -10,6 +10,7 @@ export default function Login() {
   const [credentials, setCredentials] = useState({ email: '', password: '' })
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
+    console.log(REACT_APP_BASE_URL)
     e.preventDefault();
     let response = await fetch(`${REACT_APP_BASE_URL}/api/auth/login`, {
       method: 'POST',

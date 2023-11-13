@@ -1,6 +1,6 @@
 import React from 'react'
 import '../App.css'
-import home_page_pic from '../images/home_page_pic.png'
+import home_page_pic from '../images/home_page_pic_compressed.png'
 import { Link } from 'react-router-dom'
 function Home() {
   return (
@@ -10,7 +10,7 @@ function Home() {
         <div className="row1">
 
           <div className='col1' >
-            <img src={home_page_pic} ></img>
+            <img src={home_page_pic} alt='' ></img>
           </div>
 
 
