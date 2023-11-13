@@ -14,7 +14,7 @@ const [curruser, setCurruser] = useState({name: '', email: ''});
 const [contactNo, setContactNo] = useState("");
 const [hostel, setHostel] = useState("");
 const [roomNo, setRoomNo] = useState("");
-const [paymentMethod, setPaymentMethod] = useState("");
+const [paymentMethod, setPaymentMethod] = useState("Upi");
 
 useEffect(() => {
     const fetchUser = async () => {
@@ -96,9 +96,9 @@ useEffect(() => {
                         </div>
                     </div>
                 </form>
-                <div className="checkout-payment">
+                {/* <div className="checkout-payment"> */}
                     
-                    <div className="contact-head">
+                    {/* <div className="contact-head">
                         <img src={cash} alt="" />
                         <h2>Payment Method</h2>
                     </div>
@@ -107,7 +107,6 @@ useEffect(() => {
 
                         <div className="radio-content">
                             <div className="radio-btn">
-                                {/* <input type="radio" onChange={handlePaymentMethodChange}  name="radio"/>  */}
                                 <input className="form-check-input" type="radio" onChange={handlePaymentMethodChange} value="Cash" name="flexRadioDefault" id="flexRadioDefault2" />
 
 
@@ -145,9 +144,9 @@ useEffect(() => {
                             </div>
                         </div> 
                         
-                    </div>
+                    </div> */}
 
-                </div>
+                {/* </div> */}
             </div>
             <div className='sec-2'>
                 <Bag 

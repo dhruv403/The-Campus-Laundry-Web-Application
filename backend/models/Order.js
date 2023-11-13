@@ -56,7 +56,19 @@ const OrderSchema = new Schema({
   serviceNo: {
     type: Number,
     required:true
-  }
+  },
+  razorpay_order_id:{
+    type:String,
+    required:true,
+},
+razorpay_payment_id:{
+    type:String,
+    required:true,
+},
+razorpay_signature:{
+    type:String,
+    required:true,
+},
 });
 
 
@@ -71,7 +83,10 @@ const orderValidationSchema = Joi.object({
   status: Joi.boolean().default(false),
   orderDate: Joi.string(),
   totalPrice: Joi.number().required(),
-  serviceNo: Joi.number().valid(0, 1, 2, 3, 4, 5).required()
+  serviceNo: Joi.number().valid(0, 1, 2, 3, 4, 5).required(),
+  razorpay_order_id: Joi.string(),
+  razorpay_payment_id: Joi.string(),
+  razorpay_signature: Joi.string(),
   // Add other fields and their validation rules
 });
 
