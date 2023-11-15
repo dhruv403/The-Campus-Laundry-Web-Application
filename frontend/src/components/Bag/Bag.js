@@ -25,6 +25,7 @@ export default function Bag(props) {
   
     function hide() {
       setShowPopup(false);
+      navigate('/dashboard')
     }
 
   // eslint-disable-next-line no-unused-vars
@@ -64,82 +65,116 @@ export default function Bag(props) {
         }
       }
 
-      try {
-        const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
-          // eslint-disable-next-line no-unused-vars
-        const response = await axios.post(`${REACT_APP_BASE_URL}/api/order/checkout`, orderSummary);
-        const {data:{key}}=await axios.get(`${REACT_APP_BASE_URL}/api/order/getkey`)
-        console.log(response.data);
-        const options = {
-          "key": key, // Enter the Key ID generated from the Dashboard
-          "amount": response.data.order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-          "currency": "INR",
-          "name": orderSummary.name,
-          "description": "Test Transaction",
-          "image": "https://example.com/your_logo",
-          "order_id": response.data.order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-          "handler": async function (response){
-            // alert(response.razorpay_payment_id);
-            // alert(response.razorpay_order_id);
-            // alert(response.razorpay_signature)
-            const finalPayment = {
-              name: orderSummary.name,
-              email: orderSummary.email,
-              contactNo: orderSummary.contactNo,
-              hostel: orderSummary.hostel,
-              roomNo: orderSummary.roomNo,
-              paymentMethod: orderSummary.paymentMethod,
-              hashMap: orderSummary.hashMap,
-              totalPrice: orderSummary.totalPrice,
-              serviceNo: orderSummary.serviceNo,
-              razorpay_payment_id: response.razorpay_payment_id,
-              razorpay_order_id: response.razorpay_order_id,
-              razorpay_signature: response.razorpay_signature
-            }
-            await axios.post(`${REACT_APP_BASE_URL}/api/order/paymentverification`, finalPayment);
-            // show();
-            navigate('/dashboard');
-            console.log(response);
 
-          },
-          "prefill": {
-              "name": "Dhruv Sharma",
-              "email": "sharmadhruv272@gmail.com",
-              "contact": "9000090000"
-          },
-          "notes": {
-              "address": "Razorpay Corporate Office"
-          },
-          "theme": {
-              "color": "#3399cc"
+      if(props.subscription) {
+        try {
+          const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+            // eslint-disable-next-line no-unused-vars
+          const response = await axios.post(`${REACT_APP_BASE_URL}/api/order/orders`, orderSummary);
+          // console.log(response.data);
+          show();
+        } catch (error) {
+          if (error.response) {
+            // The request was made and the server responded with a status code
+            if (error.response.status === 400) {
+              alert('Please enter valid details.');
+            } else if (error.response.status === 500) {
+              alert('Server has some issues. Please try again later.');
+            }
+            else {
+              alert('Something wierd happened. Check if you have entered valid details otherwise server has some issues today!!!');
+            }
+          } else if (error.request) {
+            // The request was made but no response was received
+            console.log(error.request);
+            alert('No response received from the server. Please try again later.');
+          } else {
+            // Something happened in setting up the request that triggered an error
+            console.log('Error', error.message);
+            alert('An error occurred. Please try again later.');
           }
-      };
-      console.log('Hello')
-      console.log(options);
-        const razor = await new window.Razorpay(options);
-        razor.open();
-        // show();
-      } catch (error) {
-        if (error.response) {
-          // The request was made and the server responded with a status code
-          if (error.response.status === 400) {
-            alert('Please enter valid details.');
-          } else if (error.response.status === 500) {
-            alert('Server has some issues. Please try again later.');
-          }
-          else {
-            alert('Something wierd happened. Check if you have entered valid details otherwise server has some issues today!!!');
-          }
-        } else if (error.request) {
-          // The request was made but no response was received
-          console.log(error.request);
-          alert('No response received from the server. Please try again later.');
-        } else {
-          // Something happened in setting up the request that triggered an error
-          console.log('Error', error.message);
-          alert('An error occurred. Please try again later.');
         }
       }
+      else {
+          try {
+            const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+              // eslint-disable-next-line no-unused-vars
+            const response = await axios.post(`${REACT_APP_BASE_URL}/api/order/checkout`, orderSummary);
+            const {data:{key}}=await axios.get(`${REACT_APP_BASE_URL}/api/order/getkey`)
+            console.log(response.data);
+            const options = {
+              "key": key, // Enter the Key ID generated from the Dashboard
+              "amount": response.data.order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+              "currency": "INR",
+              "name": orderSummary.name,
+              "description": "Test Transaction",
+              "image": "https://example.com/your_logo",
+              "order_id": response.data.order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+              "handler": async function (response){
+                // alert(response.razorpay_payment_id);
+                // alert(response.razorpay_order_id);
+                // alert(response.razorpay_signature)
+                const finalPayment = {
+                  name: orderSummary.name,
+                  email: orderSummary.email,
+                  contactNo: orderSummary.contactNo,
+                  hostel: orderSummary.hostel,
+                  roomNo: orderSummary.roomNo,
+                  paymentMethod: orderSummary.paymentMethod,
+                  hashMap: orderSummary.hashMap,
+                  totalPrice: orderSummary.totalPrice,
+                  serviceNo: orderSummary.serviceNo,
+                  razorpay_payment_id: response.razorpay_payment_id,
+                  razorpay_order_id: response.razorpay_order_id,
+                  razorpay_signature: response.razorpay_signature
+                }
+                await axios.post(`${REACT_APP_BASE_URL}/api/order/paymentverification`, finalPayment);
+                // show();
+                navigate('/dashboard');
+                console.log(response);
+    
+              },
+              "prefill": {
+                  "name": "Dhruv Sharma",
+                  "email": "sharmadhruv272@gmail.com",
+                  "contact": "9000090000"
+              },
+              "notes": {
+                  "address": "Razorpay Corporate Office"
+              },
+              "theme": {
+                  "color": "#3399cc"
+              }
+          };
+          console.log('Hello')
+          console.log(options);
+            const razor = await new window.Razorpay(options);
+            razor.open();
+            // show();
+          } catch (error) {
+            if (error.response) {
+              // The request was made and the server responded with a status code
+              if (error.response.status === 400) {
+                alert('Please enter valid details.');
+              } else if (error.response.status === 500) {
+                alert('Server has some issues. Please try again later.');
+              }
+              else {
+                alert('Something wierd happened. Check if you have entered valid details otherwise server has some issues today!!!');
+              }
+            } else if (error.request) {
+              // The request was made but no response was received
+              console.log(error.request);
+              alert('No response received from the server. Please try again later.');
+            } else {
+              // Something happened in setting up the request that triggered an error
+              console.log('Error', error.message);
+              alert('An error occurred. Please try again later.');
+            }
+          }
+        
+      }
+
 
       // console.log(orderSummary);
 

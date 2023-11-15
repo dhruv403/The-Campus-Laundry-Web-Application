@@ -43,13 +43,14 @@ router.post('/createuser',[
             name: req.body.name,
             password: secPassword,
             email: req.body.email,
+            subscription: false,
         });
 
         const data = {
             user:{
                 id: user.id,
                 name: user.name,
-                email: user.email
+                email: user.email,
             }
         }
         console.log(data);
@@ -94,7 +95,7 @@ router.post('/login',[
             user:{
                 id: user.id,
                 email:user.email,
-                name:user.name
+                name:user.name,
             }
         }
         

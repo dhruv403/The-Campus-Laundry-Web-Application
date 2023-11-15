@@ -4,6 +4,7 @@ const razorpay =require("razorpay");
 const crypto =require("crypto")
 const fetchuser = require('../middleware/fetchuser');
 const  { Order, orderValidationSchema } = require('../models/Order');
+const  User = require('../models/User');
 const Payment = require('../models/PaymentGateway')
 const { findOneAndUpdate } = require('../models/Item');
 
@@ -133,6 +134,56 @@ router.post("/paymentverification",async(req,res)=>{
  }
 })
 
+router.post("/subscription-checkout",async(req,res)=>{
+
+  // Created instance for razorpay payment
+  const instance = new razorpay({
+    key_id:process.env.KEY,
+    key_secret:process.env.SECRET,
+  })
+  const options ={
+      amount:Number(req.body.amount*100),
+      currency:"INR",
+  };
+  const order = await instance.orders.create(options);
+  // console.log(order);
+  res.status(200).json({
+    success:true,order
+  })
+
+})
+
+router.post("/subscription-update", async(req, res) => {
+  const { email, razorpay_order_id,razorpay_payment_id,razorpay_signature } = req.body;
+  try {
+    // Find the user by email
+    console.log(email);
+    const user = await User.findOne({ email });
+    // console.log(user);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    const body = razorpay_order_id + "|" +razorpay_payment_id;
+    const expectedsgnature =crypto.createHmac('sha256',process.env.SECRET).update(body.toString()).digest('hex')
+    const isauth = expectedsgnature === razorpay_signature;
+
+    if(!isauth) {
+      return res.status(404).json({ message: 'Payment FAILED!!!' });
+    }
+
+    // Update the subscription field to true
+    user.subscription = true;
+
+    // Save the updated user
+    await user.save();
+
+    return res.status(200).json({ message: 'Subscription updated successfully', user });
+  } catch (error) {
+    console.error('Error updating subscription:', error);
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
+})
 
 // for dashboard
 router.post('/getOrder',fetchuser, async (req, res) => {

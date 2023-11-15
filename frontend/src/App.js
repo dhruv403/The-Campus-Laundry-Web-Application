@@ -19,6 +19,7 @@ import {
 } from "react-router-dom";
 import Success from "./components/Success/Success";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Subscription from "./components/Subsciption/Subscription";
 import React from 'react'
 import ScrollToTop from "./components/ScrollToTop";
 import AdminLogin from "./components/AdminLogin/AdminLogin";
@@ -69,6 +70,15 @@ function App() {
             ,
           <Contact />, <Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
           <Route exact path="/success" element={[<ScrollToTop />, <Navbar />, <Success />, <Footer email={"campus.laundary@gmail.com"} phone={"+91 83490 34310"} />]}></Route>
+          <Route exact path="/subscription" element={
+            <>
+              <ScrollToTop />
+              <Navbar />
+              <Subscription />
+              <Footer email={"campus.laundry@gmail.com"} phone={"+91 83490 34310"} />
+            </>}>
+
+          </Route>
 
           {/* Admin Routes */}
           <Route exact path="/admin-login" element={<AdminLogin />}></Route>
