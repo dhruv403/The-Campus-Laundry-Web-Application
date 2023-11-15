@@ -154,6 +154,7 @@ useEffect(() => {
                 totalQuantity = {location.state.totalQuantity}
                 name = {curruser.name}
                 email = {curruser.email}
+                subscription = {curruser.subscription}
                 contactNo = {contactNo}
                 paymentMethod = {paymentMethod}
                 hostel = {hostel}
