@@ -146,7 +146,7 @@ export default function AdminDashboard() {
         </div>
       </div>
       <div className="dashboard-b">
-        <u>Weekly Orders</u>
+        <u></u>
       </div>
       {/* <div className="dashboard-c"><Graph/></div> */}
     </div>
