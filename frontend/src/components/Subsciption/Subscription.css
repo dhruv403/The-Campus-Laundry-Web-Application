@@ -48,6 +48,7 @@
     align-items: center;
     height: 60px;
     border: none;
+    /* color: black; */
 
 }
 
@@ -75,12 +76,13 @@
 }
 
 .detailsb-subscription {
-    width: 100%;
-    background-color: #199cf1;
+    width: 20%;
+    background-color: #3e87c3;
     color: rgb(0, 0, 0);
     height: 60px;
     font-size: 25px;
     font-weight: 500;
+
 }
 
 .od-sec-1-p1-admin-subscription {
@@ -236,7 +238,7 @@
 }
 
 .od-sec-2-amount-admin1-subscription h3 {
-    color: rgb(145, 231, 32);
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;

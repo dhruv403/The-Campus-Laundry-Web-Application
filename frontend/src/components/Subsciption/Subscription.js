@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './Subscription.css'
 import axios from 'axios'
+import basket from '../../images/shopping-basket.png'
 
 
 export default function Subscription() {
@@ -59,7 +60,7 @@ export default function Subscription() {
               "currency": "INR",
               "name": curruser,
               "description": "Subscription transaction",
-              "image": "https://example.com/your_logo",
+              "image": basket,
               "order_id": response.data.order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
               "handler": async function (response){
                 // alert(response.razorpay_payment_id);
@@ -127,7 +128,7 @@ export default function Subscription() {
         </div>
         <div className="od-sec-2-admin1-subscription">
 
-          <div className="od-sec-1-p3-admin1-subscription"><button className='detailsb-subscription' onClick={sub1}> View Details </button> </div>
+          <div className="od-sec-1-p3-admin1-subscription"><button className='detailsb-subscription' onClick={sub1}> Pay now </button> </div>
         </div>
 
       </div>
@@ -140,7 +141,7 @@ export default function Subscription() {
         </div>
         <div className="od-sec-2-admin1-subscription">
 
-          <div className="od-sec-1-p3-admin1-subscription"><button className='detailsb-subscription' onClick={sub2}> View Details </button> </div>
+          <div className="od-sec-1-p3-admin1-subscription"><button className='detailsb-subscription' onClick={sub2}> Pay now </button> </div>
         </div>
 
       </div>

@@ -29,7 +29,7 @@ export default function AdminLogin() {
       };
       localStorage.setItem('token', json.authtoken);
       localStorage.setItem("currentUser", JSON.stringify(user));
-      navigate('/admin-dashboard');
+      navigate('/admin-orders');
     }
     else {
       alert('Invalid Credentials...')
