@@ -11,7 +11,8 @@ export default function AdminLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let response = await fetch("http://localhost:5000/api/auth/adminlogin", {
+    const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
+    let response = await fetch(`${REACT_APP_BASE_URL}/api/auth/adminlogin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -28,7 +29,7 @@ export default function AdminLogin() {
       };
       localStorage.setItem('token', json.authtoken);
       localStorage.setItem("currentUser", JSON.stringify(user));
-      navigate('/admin-dashboard');
+      navigate('/admin-orders');
     }
     else {
       alert('Invalid Credentials...')
@@ -66,7 +67,7 @@ export default function AdminLogin() {
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">Email address</label>
                   <input type="email" className="form-control" value={credentials.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp" autoComplete='off' required />
-                  <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                  <div id="emailHelp" className="form-text">Demo credentials⬇️ <br />Email Id: admin@lnmiit.ac.in <br /> Password: admin</div>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">Password</label>

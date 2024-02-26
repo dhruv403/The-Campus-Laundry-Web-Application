@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+
 import React, { useState, useEffect } from 'react';
 import './AdminDashboard.css';
 // import Graph from '../Graph-Dashboard/Graph';
@@ -17,7 +19,8 @@ export default function AdminDashboard() {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/order/getOrderAdmindashboard');
+      const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+      const response = await axios.get(`${REACT_APP_BASE_URL}/api/order/getOrderAdmindashboard`);
       setOrders(response.data);
     } catch (error) {
       console.log('Error fetching orders:', error);
@@ -28,20 +31,21 @@ export default function AdminDashboard() {
     setActiveButton(buttonName);
   };
 
-  const renderOrdersContent = () => {
-    if (activeButton === 'totalOrders') {
-      const totalOrdersCount = orders.length;
-    }
-    else if (activeButton === 'ordersPending') {
-      const pendingOrdersCount = orders.filter(order => !order.status).length;
-    }
-    else if (activeButton === 'ordersCompleted') {
-      const completedOrdersCount = orders.filter(order => order.status).length;
-    }
-    else if (activeButton === 'totalEarnings') {
-      const totalEarnings = orders.reduce((sum, order) => sum + order.totalPrice, 0);
-    }
-  };
+  // eslint-disable-next-line no-unused-vars
+  // const renderOrdersContent = () => {
+  //   if (activeButton === 'totalOrders') {
+  //     const totalOrdersCount = orders.length;
+  //   }
+  //   else if (activeButton === 'ordersPending') {
+  //     const pendingOrdersCount = orders.filter(order => !order.status).length;
+  //   }
+  //   else if (activeButton === 'ordersCompleted') {
+  //     const completedOrdersCount = orders.filter(order => order.status).length;
+  //   }
+  //   else if (activeButton === 'totalEarnings') {
+  //     const totalEarnings = orders.reduce((sum, order) => sum + order.totalPrice, 0);
+  //   }
+  // };
 
   return (
     <div className="dashboard">
@@ -142,7 +146,7 @@ export default function AdminDashboard() {
         </div>
       </div>
       <div className="dashboard-b">
-        <u>Weekly Orders</u>
+        <u></u>
       </div>
       {/* <div className="dashboard-c"><Graph/></div> */}
     </div>

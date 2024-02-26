@@ -4,7 +4,7 @@
 
 .row1 {
     display: flex;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .col1 {
@@ -37,12 +37,12 @@
 
 }
 
-.hide {
+.hidee {
     display: none;
 }
 
 .headingl {
-    font-size: 50px;
+    font-size: 75px;
     font-weight: bold;
     color: #3e87c3;
 }
@@ -69,10 +69,12 @@
         width: 100%;
     }
 
-    .hide {
+    .hidee {
         display: block;
         display: flex;
         font-size: 40px;
+        font-weight: bold;
+        color: #3e87c3;
 
         justify-content: center;
         align-items: center;

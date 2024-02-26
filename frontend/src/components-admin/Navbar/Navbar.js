@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import basket from '../../images/basket_navbar.gif';
+import basket from '../../images/shopping-basket.png';
 import logo from '../../images/Logo.png';
 import './Navbar.css';
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -36,8 +36,8 @@ function Navbar() {
   }, []);
 
 
-  const user = JSON.parse(localStorage.getItem('currentUser'));
-  const userName = user?.userEmail.split('@')[0];
+  // const user = JSON.parse(localStorage.getItem('currentUser'));
+  // const userName = user?.userEmail.split('@')[0];
 
   return (
     <>

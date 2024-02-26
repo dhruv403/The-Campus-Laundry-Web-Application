@@ -18,8 +18,8 @@ export default function Order() {
           }
         };
         // console.log(config);
-
-        const response = await axios.post('http://localhost:5000/api/order/getOrderAdmin', {}, config);
+        const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+        const response = await axios.post(`${REACT_APP_BASE_URL}/api/order/getOrderAdmin`, {}, config);
         setOrders(response.data.orders);
         console.log(response.data.orders)
       } catch (error) {

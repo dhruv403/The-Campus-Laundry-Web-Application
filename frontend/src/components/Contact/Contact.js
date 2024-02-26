@@ -1,9 +1,9 @@
 import MailIcon from "../../images/mailicon.png";
 import PhoneIcon from "../../images/smartphone.png";
-import YouTubeIcon from "../../images/youtube.png";
-import LinkedInIcon from "../../images/linkedin.png";
-import InstagramIcon from "../../images/instagram.png";
-import FacebookIcon from "../../images/facebook.png";
+// import YouTubeIcon from "../../images/youtube.png";
+// import LinkedInIcon from "../../images/linkedin.png";
+// import InstagramIcon from "../../images/instagram.png";
+// import FacebookIcon from "../../images/facebook.png";
 import LocationOnIcon from "../../images/location.png";
 import { BsInstagram } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
@@ -40,8 +40,8 @@ export default function Contact() {
           'email': user.userEmail
         }
       };
-
-      const response = await axios.post('http://localhost:5000/api/contact/sendMessage', obj, config);
+      const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+      const response = await axios.post(`${REACT_APP_BASE_URL}/api/contact/sendMessage`, obj, config);
       console.log(response.data);
       alert("Your response has been recorded");
     } catch (error) {

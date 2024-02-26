@@ -10,6 +10,7 @@ export default function Order(props) {
     //   console.log(location);
 
     const navigate = useNavigate();
+    // eslint-disable-next-line no-unused-vars
     const [items, setItems] = useState([]);
     const [itemPrices, setItemPrices] = useState({});
     const [itemQuantities, setItemQuantities] = useState({});
@@ -20,8 +21,10 @@ export default function Order(props) {
 
         const fetchItems = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/auth/items');
+                const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
+                const response = await axios.get(`${REACT_APP_BASE_URL}/api/auth/items`);
                 setItems(response.data);
+                console.log(response.data)
                 const prices = {};
                 const quantities = {};
                 response.data.forEach((item) => {
@@ -36,10 +39,10 @@ export default function Order(props) {
         };
 
         fetchItems();
-    }, []);
+    }, [location.state.serviceNumber]);
 
     const handleOrder = () => {
-        console.log(location.state.serviceNumber);
+        // console.log(location.state.serviceNumber);
         navigate("/checkout", {
             state: {
                 grandTotal,
@@ -56,7 +59,7 @@ export default function Order(props) {
         updatedQuantities[itemName] += 1;
         setTotalQuantity(totalQuantity + 1);
         setItemQuantities(updatedQuantities);
-        calculateGrandTotal(updatedQuantities);
+        calculateGrandTotal(updatedQuantities);;;
     };
 
     const handleDecrement = (itemName) => {

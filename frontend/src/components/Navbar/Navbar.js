@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
-import basket from '../../images/basket_navbar.gif'
+// import basket from '../../images/basket_navbar.gif'
+import basket from '../../images/shopping-basket.png'
 import logo from '../../images/Logo.png'
 import './Navbar.css'
 import { NavLink, useNavigate } from 'react-router-dom'
@@ -60,6 +61,9 @@ function Navbar() {
               </li>
               <li className="nav-item  navbar_items  specorder" >
                 <NavLink className="nav-link " to="/whychooseus">Why Choose us</NavLink>
+              </li>
+              <li className="nav-item  navbar_items  specorder">
+                <NavLink className="nav-link" to="/subscription">Subscription</NavLink>
               </li>
               <li className="nav-item  navbar_items  specorder">
                 <NavLink className="nav-link" to="/contactus">Contact Us</NavLink>

@@ -6,11 +6,13 @@ import finalLogo from '../../images/login_logo.png'
 import GoogleLogo from '../../images/google.png';
 
 export default function Login() {
+  const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL
   const [credentials, setCredentials] = useState({ email: '', password: '' })
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
+    console.log(REACT_APP_BASE_URL)
     e.preventDefault();
-    let response = await fetch("http://localhost:5000/api/auth/login", {
+    let response = await fetch(`${REACT_APP_BASE_URL}/api/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -67,7 +69,7 @@ export default function Login() {
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">Email address</label>
                   <input type="email" className="form-control" value={credentials.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp" autoComplete='off' required />
-                  <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                  <div id="emailHelp" className="form-text">Enter valid LNMIIT Domain Email Address "@lnmiit.ac.in"</div>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">Password</label>
@@ -94,6 +96,7 @@ export default function Login() {
             </div>
           </div>
         </div>
+        {/* Temporary changes */}
       </div>
     </div>
   )
